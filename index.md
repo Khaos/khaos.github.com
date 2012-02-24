@@ -36,8 +36,15 @@ title: 乱弹，学步
 
 ### 网站
 
-- [谢益辉](http://yihui.name/)
-- [Tao](http://ztpala.com/)
+- Jekyll
+  - [谢益辉](http://yihui.name/)
+  - [Tao](http://ztpala.com/)
+- Octopress
+  - [Lucifr](http://lucifr.com/)
+  - [Zespia](http://zespia.tw/)
+  - [Chen Yufei](http://chenyufei.info/)
+
+### 参考文献
 
 ### 工具
 
@@ -53,8 +60,8 @@ title: 乱弹，学步
 
 - 模版
 - 插图
-- 调整字体
-- 代码高亮，利用[Pygments](http://pygments.org/)
+- 字体
+- 代码，利用[Pygments](http://pygments.org/)
 
 ## 预告，Step by step tutorial
 
