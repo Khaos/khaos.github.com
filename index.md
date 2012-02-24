@@ -39,12 +39,18 @@ title: 乱弹，学步
 - Jekyll
   - [谢益辉](http://yihui.name/)
   - [Tao](http://ztpala.com/)
+  - [Kevin Sornberger](http://www.ksornberger.com/) ([https://github.com/ksornberger/ksornberger.github.com](https://github.com/ksornberger/ksornberger.github.com))
 - Octopress
   - [Lucifr](http://lucifr.com/)
   - [Zespia](http://zespia.tw/)
   - [Chen Yufei](http://chenyufei.info/)
 
 ### 参考文献
+
+- [博客转用 Octopress](http://chenyufei.info/blog/2011-12-13/migrate-to-octopress/)
+- [Hello Octopress!](http://zespia.tw/blog/2012/01/14/hello-octopress/)
+- [Using MacPorts To Install Ruby 1.9.x](http://www.alessandrobaffa.it/2011/04/18/using-macports-to-install-ruby-1-9-x/)
+- [Using MacPorts To Install Ruby 1.9.1 and Rails 2.3.0 RC1](http://www.ruby-forum.com/topic/178659#782331)
 
 ### 工具
 
