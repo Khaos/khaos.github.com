@@ -84,7 +84,7 @@ title: 乱弹，学步
   {% endfor %}
 </ul>
 
-其他
+<del>其他</del>
 
 <!-- 
 Read [Jekyll Quick Start](http://jekyllbootstrap.com/usage/jekyll-quick-start.html)
