@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Install Ruby with RVM"
-category: 学步
+category: learning
 tags: [Ruby, RVM, MacPorts]
 ---
 {% include JB/setup %}
@@ -34,28 +34,48 @@ tags: [Ruby, RVM, MacPorts]
 
 - 打开Terminal，确定处于当前用户目录下 (~)，运行如下命令
 
-    $ bash -s stable < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer )
+      $ bash -s stable < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer )
 
 - 在所有打开的Terminal中运行
 
-    $ source /Users/Khaos/.rvm/scripts/rvm
+      $ source /Users/Khaos/.rvm/scripts/rvm
 
   可以用如下命令查看是否RVM已经安装配置成功
 
-    $ type rvm | head -1
+      $ type rvm | head -1
 
   如果返回`rvm is a function`，就说明成功了。
 
 - 查看RMV requirements
 
-    $ rvm requriements
+      $ rvm requriements
 
   在我的Mac上提示需要libksba，可以通过MacPorts安装
 
-    $ sudo port install libksba
+      $ sudo port install libksba
 
 - 利用RVM安装Ruby (e.g., 1.9.3)
 
-    $ rvm install 1.9.3
+      $ rvm install 1.9.3
 
+## Use newly installed Ruby
 
+    $ rvm use 1.9.2
+
+  check ruby version
+    $ ruby -v
+    $ which ruby
+
+## Problems
+
+- ArgumentError: invalid byte sequence in US-ASCII
+
+  See [https://github.com/rails/jquery-rails/pull/35](https://github.com/rails/jquery-rails/pull/35)
+
+## References
+
+- [RVM official site](https://rvm.beginrescueend.com/)
+- [Installing RVM](https://rvm.beginrescueend.com/rvm/install/)
+- [Ruby on Mac OSX via Mac Ports](http://stackoverflow.com/questions/3464285/ruby-on-mac-osx-via-mac-ports)
+- [Using MacPorts To Install Ruby 1.9.x](http://www.alessandrobaffa.it/2011/04/18/using-macports-to-install-ruby-1-9-x/)
+- [Using MacPorts To Install Ruby 1.9.1 and Rails 2.3.0 RC1](http://www.ruby-forum.com/topic/178659#782331)

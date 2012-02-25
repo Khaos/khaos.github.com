@@ -1,6 +1,6 @@
 ---
 layout: post
-category : 学步
+category : learning
 tags : [intro, beginner, jekyll, tutorial]
 ---
 {% include JB/setup %}

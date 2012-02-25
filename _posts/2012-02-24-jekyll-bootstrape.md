@@ -1,7 +1,8 @@
 ---
 layout: post
-title: "Jekyll Bootstrpe"
-category: 
+title: "Jekyll Bootstrape"
+category: learning
 tags: []
 ---
 {% include JB/setup %}
+

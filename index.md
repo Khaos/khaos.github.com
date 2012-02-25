@@ -44,6 +44,9 @@ title: 乱弹，学步
   - [Lucifr](http://lucifr.com/)
   - [Zespia](http://zespia.tw/)
   - [Chen Yufei](http://chenyufei.info/)
+  - [Blog.XDite.net](http://blog.xdite.net/)
+  - [Alex Zeitler](http://alexzeitler.com/)
+  - [Zanshin.net](http://zanshin.net/)
 
 ### 参考文献
 
