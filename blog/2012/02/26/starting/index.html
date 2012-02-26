@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Khaos</title>
+  <title>乱弹，学步 - Khaos</title>
   <meta name="author" content="Dazhi Jiang">
 
   
-  <meta name="description" content="自打从Yihui Xie那里听说了Jekyll，并照着Jekyll Bootstrap折腾了一番，便喜欢上了这个静态网站构建系统。不久从Lucifr看到Octopress这个变身版的Jekyll，于是就更加要齐齐苦苦了。Octopress依赖于Ruby 1.9.2+，所以这里介绍一下如何用Ruby &hellip;">
+  <meta name="description" content="万事开头难，一篇杂乱的开场白。 本欲在开场中矫揉造作一番，可提起笔来却不知道写些什么。一通挣扎，不仅释然，还是顺其自然，想到什么就写什么吧，于是就有了这个《乱弹》。 缘起 这个Blog是关于什么的？嗯～，我不是科学界的一名大师（怪兽？），而是茫茫工程界一枚迷途小书童，一个三脚猫的业余码农， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://Khaos.github.com">
+  <link rel="canonical" href="http://Khaos.github.com/blog/2012/02/26/starting">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -62,142 +62,12 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/02/26/install-ruby-with-rvm/">Install Ruby With RVM</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-02-26T09:33:00+00:00" pubdate data-updated="true">Feb 26<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>自打从<a href="http://yihui.name/">Yihui Xie</a>那里听说了<a href="http://jekyllrb.com/">Jekyll</a>，并照着<a href="http://jekyllbootstrap.com/">Jekyll Bootstrap</a>折腾了一番，便喜欢上了这个静态网站构建系统。不久从<a href="http://lucifr.com/">Lucifr</a>看到<a href="http://octopress.org/">Octopress</a>这个变身版的Jekyll，于是就更加要齐齐苦苦了。Octopress依赖于Ruby 1.9.2+，所以这里介绍一下如何用<a href="https://rvm.beginrescueend.com/">Ruby Version Manager (RVM)</a></p>
-
-<h2>Unisntall all ruby-related MacPorts&#8217; ports</h2>
-
-<p>由于我的Ruby是用MacPorts安装的，所以首先需要把这个版本的Ruby卸载掉。</p>
-
-<ul>
-<li><p>卸载相关Ports</p>
-
-<pre><code>$ sudo port uninstall rb19-*
-$ sudo port clean rb19-*
-$ sudo port uninstall ruby19
-$ sudo port clean ruby19
-$ sudo port uninstall rb-*
-$ sudo port clean rb-*
-$ sudo port uninstall ruby
-$ sudo port clean ruby
-</code></pre></li>
-<li><p>移除Gems</p>
-
-<pre><code>$ sudo rm -rf /opt/local/lib/ruby
-$ sudo rm -rf /opt/local/lib/ruby19
-$ sudo rm -rf /opt/local/bin/rdiscount
-$ sudo rm -rf /opt/local/bin/jekyll
-</code></pre></li>
-</ul>
-
-
-<h2>Install RVM</h2>
-
-<ul>
-<li><p>打开Terminal，确定处于当前用户目录下 (~)，运行如下命令</p>
-
-<pre><code>$ bash -s stable &lt; &lt;(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer )
-</code></pre></li>
-<li><p>在所有打开的Terminal中运行</p>
-
-<pre><code>$ source /Users/Khaos/.rvm/scripts/rvm
-</code></pre>
-
-<p>可以用如下命令查看是否RVM已经安装配置成功</p>
-
-<pre><code>$ type rvm | head -1
-</code></pre>
-
-<p>如果返回<code>rvm is a function</code>，就说明成功了。</p></li>
-<li><p>查看RMV requirements</p>
-
-<pre><code>$ rvm requriements
-</code></pre>
-
-<p>在我的Mac上提示需要libksba，可以通过MacPorts安装</p>
-
-<pre><code>$ sudo port install libksba
-</code></pre></li>
-<li><p>利用RVM安装Ruby (e.g., 1.9.3)</p>
-
-<pre><code>$ rvm install 1.9.3
-</code></pre></li>
-</ul>
-
-
-<h2>Use newly installed Ruby</h2>
-
-<pre><code>$ rvm use 1.9.2
-</code></pre>
-
-<p>  check ruby version</p>
-
-<pre><code>$ ruby -v
-$ which ruby
-</code></pre>
-
-<h2>Problems</h2>
-
-<ul>
-<li><p>ArgumentError: invalid byte sequence in US-ASCII</p>
-
-<p>See <a href="https://github.com/rails/jquery-rails/pull/35">https://github.com/rails/jquery-rails/pull/35</a></p></li>
-</ul>
-
-
-<h2>References</h2>
-
-<ul>
-<li><a href="https://rvm.beginrescueend.com/">RVM official site</a></li>
-<li><a href="https://rvm.beginrescueend.com/rvm/install/">Installing RVM</a></li>
-<li><a href="http://stackoverflow.com/questions/3464285/ruby-on-mac-osx-via-mac-ports">Ruby on Mac OSX via Mac Ports</a></li>
-<li><a href="http://www.alessandrobaffa.it/2011/04/18/using-macports-to-install-ruby-1-9-x/">Using MacPorts To Install Ruby 1.9.x</a></li>
-<li><a href="http://www.ruby-forum.com/topic/178659#782331">Using MacPorts To Install Ruby 1.9.1 and Rails 2.3.0 RC1</a></li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/02/26/starting/">乱弹，学步</a></h1>
+      <h1 class="entry-title">乱弹，学步</h1>
     
     
       <p class="meta">
@@ -220,7 +90,7 @@ $ which ruby
   </header>
 
 
-  <div class="entry-content"><p>万事开头难，一篇杂乱的开场白。</p>
+<div class="entry-content"><p>万事开头难，一篇杂乱的开场白。</p>
 
 <p>本欲在开场中矫揉造作一番，可提起笔来却不知道写些什么。一通挣扎，不仅释然，还是顺其自然，想到什么就写什么吧，于是就有了这个《<strong>乱弹</strong>》。</p>
 
@@ -383,18 +253,59 @@ We need to clean up the themes, make theme usage guides with theme-specific mark
  &#8211;>
 
 </div>
+
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Dazhi Jiang</span></span>
+
+      
+
+
+
+
+
+
+
+
   
 
 
-    </article>
+<time datetime="2012-02-26T09:25:00+00:00" pubdate data-updated="true">Feb 26<span>th</span>, 2012</time>
+      
+
+<span class="categories">
   
-  <div class="pagination">
+    <a class='category' href='/blog/categories/learning/'>learning</a>
+  
+</span>
+
+
+    </p>
     
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://Khaos.github.com/blog/2012/02/26/starting/" data-via="" data-counturl="http://Khaos.github.com/blog/2012/02/26/starting/" >Tweet</a>
+  
+  
+  
 </div>
+
+    
+    <p class="meta">
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/02/26/install-ruby-with-rvm/" title="Next Post: Install Ruby with RVM">Install Ruby with RVM &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
 <aside class="sidebar">
   
     <section>
@@ -419,6 +330,7 @@ We need to clean up the themes, make theme usage guides with theme-specific mark
 
   
 </aside>
+
 
     </div>
   </div>
