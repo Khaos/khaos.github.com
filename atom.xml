@@ -4,7 +4,7 @@
   <title><![CDATA[Khaos]]></title>
   <link href="http://Khaos.github.com/atom.xml" rel="self"/>
   <link href="http://Khaos.github.com/"/>
-  <updated>2012-02-26T09:45:14+00:00</updated>
+  <updated>2012-02-26T09:56:18+00:00</updated>
   <id>http://Khaos.github.com/</id>
   <author>
     <name><![CDATA[Dazhi Jiang]]></name>
@@ -225,7 +225,7 @@ $ which ruby
 </ul>
 
 
-<!-- ## Blog列表
+<h2>Blog列表</h2>
 
 <ul class="posts">
   
@@ -233,16 +233,20 @@ $ which ruby
   
     <li><span>26 Feb 2012</span> &raquo; <a href="http://Khaos.github.com/blog/2012/02/26/starting/">乱弹，学步</a></li>
   
-</ul> &#8211;>
+</ul>
 
 
 <p><del>其他</del></p>
 
+<!-- Read [Jekyll Quick Start](http://jekyllbootstrap.com/usage/jekyll-quick-start.html) -->
+
+
+
+
+<!-- Complete usage and documentation available at: [Jekyll Bootstrap](http://jekyllbootstrap.com) -->
+
+
 <!-- 
-Read [Jekyll Quick Start](http://jekyllbootstrap.com/usage/jekyll-quick-start.html)
-
-Complete usage and documentation available at: [Jekyll Bootstrap](http://jekyllbootstrap.com)
-
 ## Update Author Attributes
 
 In `_config.yml` remember to specify your own data:
@@ -265,20 +269,7 @@ When you don't need the samples anymore just delete the `_posts/core-samples` fo
     $ rm -rf _posts/core-samples
 
 Here's a sample "posts list".
-
-<ul class="posts">
-  
-    <li><span>26 Feb 2012</span> &raquo; <a href="http://Khaos.github.com/blog/2012/02/26/install-ruby-with-rvm/">Install Ruby with RVM</a></li>
-  
-    <li><span>26 Feb 2012</span> &raquo; <a href="http://Khaos.github.com/blog/2012/02/26/starting/">乱弹，学步</a></li>
-  
-</ul>
-
-## To-Do
-
-This theme is still unfinished. If you&#8217;d like to be added as a contributor, [please fork](http://github.com/plusjade/jekyll-bootstrap)!
-We need to clean up the themes, make theme usage guides with theme-specific markup examples.
- &#8211;>
+ -->
 
 ]]></content>
   </entry>
