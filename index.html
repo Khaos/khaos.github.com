@@ -95,98 +95,12 @@
 
   <div class="entry-content"><p>自打从<a href="http://yihui.name/">Yihui Xie</a>那里听说了<a href="http://jekyllrb.com/">Jekyll</a>，并照着<a href="http://jekyllbootstrap.com/">Jekyll Bootstrap</a>折腾了一番，便喜欢上了这个静态网站构建系统。不久从<a href="http://lucifr.com/">Lucifr</a>看到<a href="http://octopress.org/">Octopress</a>这个变身版的Jekyll，于是就更加要齐齐苦苦了。Octopress依赖于Ruby 1.9.2+，所以这里介绍一下如何用<a href="https://rvm.beginrescueend.com/">Ruby Version Manager (RVM)</a></p>
 
-<h2>Unisntall all ruby-related MacPorts&#8217; ports</h2>
-
-<p>由于我的Ruby是用MacPorts安装的，所以首先需要把这个版本的Ruby卸载掉。</p>
-
-<ul>
-<li><p>卸载相关Ports</p>
-
-<pre><code>$ sudo port uninstall rb19-*
-$ sudo port clean rb19-*
-$ sudo port uninstall ruby19
-$ sudo port clean ruby19
-$ sudo port uninstall rb-*
-$ sudo port clean rb-*
-$ sudo port uninstall ruby
-$ sudo port clean ruby
-</code></pre></li>
-<li><p>移除Gems</p>
-
-<pre><code>$ sudo rm -rf /opt/local/lib/ruby
-$ sudo rm -rf /opt/local/lib/ruby19
-$ sudo rm -rf /opt/local/bin/rdiscount
-$ sudo rm -rf /opt/local/bin/jekyll
-</code></pre></li>
-</ul>
-
-
-<h2>Install RVM</h2>
-
-<ul>
-<li><p>打开Terminal，确定处于当前用户目录下 (~)，运行如下命令</p>
-
-<pre><code>$ bash -s stable &lt; &lt;(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer )
-</code></pre></li>
-<li><p>在所有打开的Terminal中运行</p>
-
-<pre><code>$ source /Users/Khaos/.rvm/scripts/rvm
-</code></pre>
-
-<p>可以用如下命令查看是否RVM已经安装配置成功</p>
-
-<pre><code>$ type rvm | head -1
-</code></pre>
-
-<p>如果返回<code>rvm is a function</code>，就说明成功了。</p></li>
-<li><p>查看RMV requirements</p>
-
-<pre><code>$ rvm requriements
-</code></pre>
-
-<p>在我的Mac上提示需要libksba，可以通过MacPorts安装</p>
-
-<pre><code>$ sudo port install libksba
-</code></pre></li>
-<li><p>利用RVM安装Ruby (e.g., 1.9.3)</p>
-
-<pre><code>$ rvm install 1.9.3
-</code></pre></li>
-</ul>
-
-
-<h2>Use newly installed Ruby</h2>
-
-<pre><code>$ rvm use 1.9.2
-</code></pre>
-
-<p>  check ruby version</p>
-
-<pre><code>$ ruby -v
-$ which ruby
-</code></pre>
-
-<h2>Problems</h2>
-
-<ul>
-<li><p>ArgumentError: invalid byte sequence in US-ASCII</p>
-
-<p>See <a href="https://github.com/rails/jquery-rails/pull/35">https://github.com/rails/jquery-rails/pull/35</a></p></li>
-</ul>
-
-
-<h2>References</h2>
-
-<ul>
-<li><a href="https://rvm.beginrescueend.com/">RVM official site</a></li>
-<li><a href="https://rvm.beginrescueend.com/rvm/install/">Installing RVM</a></li>
-<li><a href="http://stackoverflow.com/questions/3464285/ruby-on-mac-osx-via-mac-ports">Ruby on Mac OSX via Mac Ports</a></li>
-<li><a href="http://www.alessandrobaffa.it/2011/04/18/using-macports-to-install-ruby-1-9-x/">Using MacPorts To Install Ruby 1.9.x</a></li>
-<li><a href="http://www.ruby-forum.com/topic/178659#782331">Using MacPorts To Install Ruby 1.9.1 and Rails 2.3.0 RC1</a></li>
-</ul>
-
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/02/26/install-ruby-with-rvm/">Continue reading &rarr;</a>
+    </footer>
   
 
 
@@ -240,141 +154,12 @@ $ which ruby
 </ul>
 
 
-<h2>初探</h2>
-
-<p>既然对建站一无所知，不如就从此入手吧，前面这几篇就说说如何用Jekyll建站吧。</p>
-
-<h3>纷至沓来的概念</h3>
-
-<ul>
-<li><a href="http://liquidmarkup.org/">Liquid</a></li>
-<li><a href="http://daringfireball.net/projects/markdown/">Markdown</a></li>
-<li><a href="http://jekyllrb.com/">Jekyll</a></li>
-<li><a href="http://www.yaml.org/">YAML</a></li>
-<li><a href="http://disqus.com/">DISQUS</a></li>
-<li><a href="http://octopress.org/">Octopress</a>, an exmple from <a href="http://lucifr.com/">Lucifr</a></li>
-</ul>
-
-
-<h3>网站</h3>
-
-<ul>
-<li>Jekyll
-
-<ul>
-<li><a href="http://yihui.name/">谢益辉</a></li>
-<li><a href="http://ztpala.com/">Tao</a></li>
-<li><a href="http://www.ksornberger.com/">Kevin Sornberger</a> (<a href="https://github.com/ksornberger/ksornberger.github.com">https://github.com/ksornberger/ksornberger.github.com</a>)</li>
-</ul>
-</li>
-<li>Octopress
-
-<ul>
-<li><a href="http://lucifr.com/">Lucifr</a></li>
-<li><a href="http://zespia.tw/">Zespia</a></li>
-<li><a href="http://chenyufei.info/">Chen Yufei</a></li>
-<li><a href="http://blog.xdite.net/">Blog.XDite.net</a></li>
-<li><a href="http://alexzeitler.com/">Alex Zeitler</a></li>
-<li><a href="http://zanshin.net/">Zanshin.net</a></li>
-</ul>
-</li>
-</ul>
-
-
-<h3>参考文献</h3>
-
-<ul>
-<li><a href="http://chenyufei.info/blog/2011-12-13/migrate-to-octopress/">博客转用 Octopress</a></li>
-<li><a href="http://zespia.tw/blog/2012/01/14/hello-octopress/">Hello Octopress!</a></li>
-<li><a href="http://www.alessandrobaffa.it/2011/04/18/using-macports-to-install-ruby-1-9-x/">Using MacPorts To Install Ruby 1.9.x</a></li>
-<li><a href="http://www.ruby-forum.com/topic/178659#782331">Using MacPorts To Install Ruby 1.9.1 and Rails 2.3.0 RC1</a></li>
-</ul>
-
-
-<h3>工具</h3>
-
-<ul>
-<li><a href="http://www.sublimetext.com/">Sublime Text 2</a>, replacement of <a href="http://macromates.com/">TextMate</a> (BBEdit? no)</li>
-</ul>
-
-
-<h3>目标</h3>
-
-<ul>
-<li>Blogging with comments</li>
-<li>Blogging with codes</li>
-<li>Blogging with graph</li>
-</ul>
-
-
-<h3>技术</h3>
-
-<ul>
-<li>模版</li>
-<li>插图</li>
-<li>字体</li>
-<li>代码，利用<a href="http://pygments.org/">Pygments</a></li>
-</ul>
-
-
-<h2>预告，Step by step tutorial</h2>
-
-<ul>
-<li>Jekyll</li>
-<li>Jekyll Bootstrape</li>
-<li>Markdown</li>
-<li>Sublime Text 2</li>
-</ul>
-
-
-<h2>Blog列表</h2>
-
-<ul class="posts">
-  
-    <li><span>26 Feb 2012</span> &raquo; <a href="/blog/2012/02/26/install-ruby-with-rvm/">Install Ruby with RVM</a></li>
-  
-    <li><span>26 Feb 2012</span> &raquo; <a href="/blog/2012/02/26/starting/">乱弹，学步</a></li>
-  
-</ul>
-
-
-<p><del>其他</del></p>
-
-<!-- Read [Jekyll Quick Start](http://jekyllbootstrap.com/usage/jekyll-quick-start.html) -->
-
-
-
-
-<!-- Complete usage and documentation available at: [Jekyll Bootstrap](http://jekyllbootstrap.com) -->
-
-
-<!-- 
-## Update Author Attributes
-
-In `_config.yml` remember to specify your own data:
-    
-    title : My Blog =)
-    
-    author :
-      name : Name Lastname
-      email : blah@email.test
-      github : username
-      twitter : username
-
-The theme should reference these variables whenever needed.
-    
-## Sample Posts
-
-This blog contains sample posts which help stage pages and blog data.
-When you don't need the samples anymore just delete the `_posts/core-samples` folder.
-
-    $ rm -rf _posts/core-samples
-
-Here's a sample "posts list".
- -->
-
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/02/26/starting/">Continue reading &rarr;</a>
+    </footer>
   
 
 
