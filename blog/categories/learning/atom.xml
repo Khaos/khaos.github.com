@@ -4,7 +4,7 @@
   <title><![CDATA[Category: learning | Khaos]]></title>
   <link href="http://Khaos.github.com/blog/categories/learning/atom.xml" rel="self"/>
   <link href="http://Khaos.github.com/"/>
-  <updated>2012-02-26T20:26:46+00:00</updated>
+  <updated>2012-02-27T01:26:19+00:00</updated>
   <id>http://Khaos.github.com/</id>
   <author>
     <name><![CDATA[Dazhi Jiang]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Install Ruby with RVM &amp;&amp;]]></title>
+    <title type="html"><![CDATA[Install Ruby with RVM]]></title>
     <link href="http://Khaos.github.com/blog/2012/02/26/install-ruby-with-rvm/"/>
     <updated>2012-02-26T09:33:00+00:00</updated>
     <id>http://Khaos.github.com/blog/2012/02/26/install-ruby-with-rvm</id>
@@ -23,7 +23,9 @@
 <!-- more -->
 
 
-<h2>Unisntall all ruby-related MacPorts' ports <em>&amp;</em></h2>
+<h2>Unisntall all ruby-related MacPorts' ports</h2>
+
+<h3>h3</h3>
 
 <p>由于我的Ruby是用MacPorts安装的，所以首先需要把这个版本的Ruby卸载掉。</p>
 
@@ -166,9 +168,10 @@ $ which ruby
 <li>Jekyll
 
 <ul>
-<li><a href="http://yihui.name/">谢益辉</a></li>
+<li><a href="http://yihui.name/">谢益辉</a>, source  <a href="https://github.com/yihui/yihui.github.com">@github</a></li>
+<li><a href="http://lhzhang.com/">setlmpl</a></li>
 <li><a href="http://ztpala.com/">Tao</a></li>
-<li><a href="http://www.ksornberger.com/">Kevin Sornberger</a> (<a href="https://github.com/ksornberger/ksornberger.github.com">https://github.com/ksornberger/ksornberger.github.com</a>)</li>
+<li><a href="http://www.ksornberger.com/">Kevin Sornberger</a> source <a href="https://github.com/ksornberger/ksornberger.github.com">@github</a></li>
 </ul>
 </li>
 <li>Octopress
@@ -238,7 +241,7 @@ $ which ruby
 
 <ul class="posts">
   
-    <li><span>26 Feb 2012</span> &raquo; <a href="/blog/2012/02/26/install-ruby-with-rvm/">Install Ruby with RVM &amp;&amp;</a></li>
+    <li><span>26 Feb 2012</span> &raquo; <a href="/blog/2012/02/26/install-ruby-with-rvm/">Install Ruby with RVM</a></li>
   
     <li><span>26 Feb 2012</span> &raquo; <a href="/blog/2012/02/26/starting/">乱弹，学步</a></li>
   
