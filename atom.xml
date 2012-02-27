@@ -4,7 +4,7 @@
   <title><![CDATA[Khaos]]></title>
   <link href="http://Khaos.github.com/atom.xml" rel="self"/>
   <link href="http://Khaos.github.com/"/>
-  <updated>2012-02-27T01:38:28+00:00</updated>
+  <updated>2012-02-27T16:23:28+00:00</updated>
   <id>http://Khaos.github.com/</id>
   <author>
     <name><![CDATA[Dazhi Jiang]]></name>
@@ -25,12 +25,9 @@
 
 <h2>Unisntall all ruby-related MacPorts&#8217; ports</h2>
 
-<h3>h3</h3>
-
 <p>由于我的Ruby是用MacPorts安装的，所以首先需要把这个版本的Ruby卸载掉。</p>
 
-<ul>
-<li><p>卸载相关Ports</p>
+<h3>卸载相关Ports</h3>
 
 <pre><code>$ sudo port uninstall rb19-*
 $ sudo port clean rb19-*
@@ -40,25 +37,24 @@ $ sudo port uninstall rb-*
 $ sudo port clean rb-*
 $ sudo port uninstall ruby
 $ sudo port clean ruby
-</code></pre></li>
-<li><p>移除Gems</p>
+</code></pre>
+
+<h3>移除Gems</h3>
 
 <pre><code>$ sudo rm -rf /opt/local/lib/ruby
 $ sudo rm -rf /opt/local/lib/ruby19
 $ sudo rm -rf /opt/local/bin/rdiscount
 $ sudo rm -rf /opt/local/bin/jekyll
-</code></pre></li>
-</ul>
-
+</code></pre>
 
 <h2>Install RVM</h2>
 
-<ul>
-<li><p>打开Terminal，确定处于当前用户目录下 (~)，运行如下命令</p>
+<p>打开Terminal，确定处于当前用户目录下 (~)，运行如下命令</p>
 
 <pre><code>$ bash -s stable &lt; &lt;(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer )
-</code></pre></li>
-<li><p>在所有打开的Terminal中运行</p>
+</code></pre>
+
+<p>在所有打开的Terminal中运行</p>
 
 <pre><code>$ source /Users/Khaos/.rvm/scripts/rvm
 </code></pre>
@@ -68,8 +64,9 @@ $ sudo rm -rf /opt/local/bin/jekyll
 <pre><code>$ type rvm | head -1
 </code></pre>
 
-<p>如果返回<code>rvm is a function</code>，就说明成功了。</p></li>
-<li><p>查看RMV requirements</p>
+<p>如果返回<code>rvm is a function</code>，就说明成功了。</p>
+
+<p>查看RMV requirements</p>
 
 <pre><code>$ rvm requriements
 </code></pre>
@@ -77,13 +74,12 @@ $ sudo rm -rf /opt/local/bin/jekyll
 <p>在我的Mac上提示需要libksba，可以通过MacPorts安装</p>
 
 <pre><code>$ sudo port install libksba
-</code></pre></li>
-<li><p>利用RVM安装Ruby (e.g., 1.9.3)</p>
+</code></pre>
+
+<p>利用RVM安装Ruby (e.g., 1.9.3)</p>
 
 <pre><code>$ rvm install 1.9.3
-</code></pre></li>
-</ul>
-
+</code></pre>
 
 <h2>Use newly installed Ruby</h2>
 
