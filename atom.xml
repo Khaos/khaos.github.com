@@ -4,7 +4,7 @@
   <title><![CDATA[Khaos]]></title>
   <link href="http://Khaos.github.com/atom.xml" rel="self"/>
   <link href="http://Khaos.github.com/"/>
-  <updated>2012-03-01T12:10:08+00:00</updated>
+  <updated>2012-03-01T19:28:12+00:00</updated>
   <id>http://Khaos.github.com/</id>
   <author>
     <name><![CDATA[Dazhi Jiang]]></name>
@@ -18,7 +18,7 @@
     <link href="http://Khaos.github.com/blog/2012/02/26/install-ruby-with-rvm/"/>
     <updated>2012-02-26T09:33:00+00:00</updated>
     <id>http://Khaos.github.com/blog/2012/02/26/install-ruby-with-rvm</id>
-    <content type="html"><![CDATA[<p>自打从 <a href="http://yihui.name/">Yihui Xie</a> 那里听说了<a href="http://jekyllrb.com/">Jekyll</a>，并照着 <a href="http://jekyllbootstrap.com/">Jekyll Bootstrap</a> 折腾了一番，便喜欢上了这个静态网站构建系统。不久从<a href="http://lucifr.com/">Lucifr</a>看到<a href="http://octopress.org/">Octopress</a>这个变身版的Jekyll，于是就更加要齐齐苦苦了。Octopress依赖于Ruby 1.9.2+，所以这里介绍一下如何用<a href="https://rvm.beginrescueend.com/">Ruby Version Manager (RVM)</a></p>
+    <content type="html"><![CDATA[<p>自打从 <a href="http://yihui.name/">Yihui Xie</a> 那里听说了<a href="http://jekyllrb.com/">Jekyll</a>，并照着 <a href="http://jekyllbootstrap.com/">Jekyll Bootstrap</a> 折腾了一番，便喜欢上了这个静态网站构建系统。不久从 <a href="http://lucifr.com/">Lucifr</a>看到<a href="http://octopress.org/">Octopress</a> 这个变身版的Jekyll，于是就更加要齐齐苦苦了。Octopress依赖于Ruby 1.9.2+，所以这里介绍一下如何用 <a href="https://rvm.beginrescueend.com/">Ruby Version Manager (RVM)</a>。</p>
 
 <!-- more -->
 
