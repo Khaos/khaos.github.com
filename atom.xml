@@ -4,7 +4,7 @@
   <title><![CDATA[Khaos]]></title>
   <link href="http://Khaos.github.com/atom.xml" rel="self"/>
   <link href="http://Khaos.github.com/"/>
-  <updated>2012-03-01T19:28:12+00:00</updated>
+  <updated>2012-03-02T01:54:15+00:00</updated>
   <id>http://Khaos.github.com/</id>
   <author>
     <name><![CDATA[Dazhi Jiang]]></name>
@@ -18,7 +18,7 @@
     <link href="http://Khaos.github.com/blog/2012/02/26/install-ruby-with-rvm/"/>
     <updated>2012-02-26T09:33:00+00:00</updated>
     <id>http://Khaos.github.com/blog/2012/02/26/install-ruby-with-rvm</id>
-    <content type="html"><![CDATA[<p>自打从 <a href="http://yihui.name/">Yihui Xie</a> 那里听说了<a href="http://jekyllrb.com/">Jekyll</a>，并照着 <a href="http://jekyllbootstrap.com/">Jekyll Bootstrap</a> 折腾了一番，便喜欢上了这个静态网站构建系统。不久从 <a href="http://lucifr.com/">Lucifr</a>看到<a href="http://octopress.org/">Octopress</a> 这个变身版的Jekyll，于是就更加要齐齐苦苦了。Octopress依赖于Ruby 1.9.2+，所以这里介绍一下如何用 <a href="https://rvm.beginrescueend.com/">Ruby Version Manager (RVM)</a>。</p>
+    <content type="html"><![CDATA[<p>自打从 <a href="http://yihui.name/">Yihui Xie</a> 那里听说了<a href="http://jekyllrb.com/">Jekyll</a>，并照着 <a href="http://jekyllbootstrap.com/">Jekyll Bootstrap</a> 折腾了一番，便喜欢上了这个静态网站构建系统。不久从 <a href="http://lucifr.com/">Lucifr</a> 看到 <a href="http://octopress.org/">Octopress</a> 这个变身版的Jekyll，于是就更加要齐齐苦苦了。Octopress依赖于Ruby 1.9.2+，所以这里介绍一下如何用 <a href="https://rvm.beginrescueend.com/">Ruby Version Manager (RVM)</a>。</p>
 
 <!-- more -->
 
@@ -104,8 +104,8 @@ $ which ruby
 <h2>References</h2>
 
 <ul>
-<li><a href="https://rvm.beginrescueend.com/">RVM official site</a></li>
-<li><a href="https://rvm.beginrescueend.com/rvm/install/">Installing RVM</a></li>
+<li><a href="https://rvm.beginrescueend.com/">RVM official site</a></li>
+<li><a href="https://rvm.beginrescueend.com/rvm/install/">Installing RVM</a></li>
 <li><a href="http://stackoverflow.com/questions/3464285/ruby-on-mac-osx-via-mac-ports">Ruby on Mac OSX via Mac Ports</a></li>
 <li><a href="http://www.alessandrobaffa.it/2011/04/18/using-macports-to-install-ruby-1-9-x/">Using MacPorts To Install Ruby 1.9.x</a></li>
 <li><a href="http://www.ruby-forum.com/topic/178659#782331">Using MacPorts To Install Ruby 1.9.1 and Rails 2.3.0 RC1</a></li>
