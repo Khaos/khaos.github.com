@@ -4,7 +4,7 @@
   <title><![CDATA[Category: learning | Khaos]]></title>
   <link href="http://Khaos.github.com/blog/categories/learning/atom.xml" rel="self"/>
   <link href="http://Khaos.github.com/"/>
-  <updated>2012-03-02T01:54:15+00:00</updated>
+  <updated>2012-03-21T16:39:49+00:00</updated>
   <id>http://Khaos.github.com/</id>
   <author>
     <name><![CDATA[Dazhi Jiang]]></name>
@@ -18,16 +18,15 @@
     <link href="http://Khaos.github.com/blog/2012/02/26/install-ruby-with-rvm/"/>
     <updated>2012-02-26T09:33:00+00:00</updated>
     <id>http://Khaos.github.com/blog/2012/02/26/install-ruby-with-rvm</id>
-    <content type="html"><![CDATA[<p>自打从 <a href="http://yihui.name/">Yihui Xie</a> 那里听说了<a href="http://jekyllrb.com/">Jekyll</a>，并照着 <a href="http://jekyllbootstrap.com/">Jekyll Bootstrap</a> 折腾了一番，便喜欢上了这个静态网站构建系统。不久从 <a href="http://lucifr.com/">Lucifr</a> 看到 <a href="http://octopress.org/">Octopress</a> 这个变身版的Jekyll，于是就更加要齐齐苦苦了。Octopress依赖于Ruby 1.9.2+，所以这里介绍一下如何用 <a href="https://rvm.beginrescueend.com/">Ruby Version Manager (RVM)</a>。</p>
+    <content type="html"><![CDATA[<p>自打从<a href="http://yihui.name/">Yihui Xie</a>那里听说了<a href="http://jekyllrb.com/">Jekyll</a>，并照着<a href="http://jekyllbootstrap.com/">Jekyll Bootstrap</a>折腾了一番，便喜欢上了这个静态网站构建系统。不久从<a href="http://lucifr.com/">Lucifr</a>看到<a href="http://octopress.org/">Octopress</a>这个变身版的Jekyll，于是就更加要齐齐苦苦了。Octopress依赖于Ruby 1.9.2+，所以这里介绍一下如何用<a href="https://rvm.beginrescueend.com/">Ruby Version Manager (RVM)</a>。</p>
 
 <!-- more -->
 
-
-<h2>Uninstall all ruby-related MacPorts' ports</h2>
+<h2 id="uninstall-all-ruby-related-macports-ports">Uninstall all ruby-related MacPorts’ ports</h2>
 
 <p>由于我的Ruby是用MacPorts安装的，所以首先需要把这个版本的Ruby卸载掉。</p>
 
-<h3>卸载相关Ports</h3>
+<h3 id="ports">卸载相关Ports</h3>
 
 <pre><code>$ sudo port uninstall rb19-*
 $ sudo port clean rb19-*
@@ -39,7 +38,7 @@ $ sudo port uninstall ruby
 $ sudo port clean ruby
 </code></pre>
 
-<h3>移除Gems</h3>
+<h3 id="gems">移除Gems</h3>
 
 <pre><code>$ sudo rm -rf /opt/local/lib/ruby
 $ sudo rm -rf /opt/local/lib/ruby19
@@ -47,7 +46,7 @@ $ sudo rm -rf /opt/local/bin/rdiscount
 $ sudo rm -rf /opt/local/bin/jekyll
 </code></pre>
 
-<h2>Install RVM</h2>
+<h2 id="install-rvm">Install RVM</h2>
 
 <p>打开Terminal，确定处于当前用户目录下 (~)，运行如下命令</p>
 
@@ -81,36 +80,34 @@ $ sudo rm -rf /opt/local/bin/jekyll
 <pre><code>$ rvm install 1.9.3
 </code></pre>
 
-<h2>Use newly installed Ruby</h2>
+<h2 id="use-newly-installed-ruby">Use newly installed Ruby</h2>
 
 <pre><code>$ rvm use 1.9.2
 </code></pre>
 
-<p>  check ruby version</p>
+<p>check ruby version
+    $ ruby -v
+    $ which ruby</p>
 
-<pre><code>$ ruby -v
-$ which ruby
-</code></pre>
-
-<h2>Problems</h2>
+<h2 id="problems">Problems</h2>
 
 <ul>
-<li><p>ArgumentError: invalid byte sequence in US-ASCII</p>
+  <li>
+    <p>ArgumentError: invalid byte sequence in US-ASCII</p>
 
-<p>See <a href="https://github.com/rails/jquery-rails/pull/35">https://github.com/rails/jquery-rails/pull/35</a></p></li>
+    <p>See <a href="https://github.com/rails/jquery-rails/pull/35">https://github.com/rails/jquery-rails/pull/35</a></p>
+  </li>
 </ul>
 
-
-<h2>References</h2>
+<h2 id="references">References</h2>
 
 <ul>
-<li><a href="https://rvm.beginrescueend.com/">RVM official site</a></li>
-<li><a href="https://rvm.beginrescueend.com/rvm/install/">Installing RVM</a></li>
-<li><a href="http://stackoverflow.com/questions/3464285/ruby-on-mac-osx-via-mac-ports">Ruby on Mac OSX via Mac Ports</a></li>
-<li><a href="http://www.alessandrobaffa.it/2011/04/18/using-macports-to-install-ruby-1-9-x/">Using MacPorts To Install Ruby 1.9.x</a></li>
-<li><a href="http://www.ruby-forum.com/topic/178659#782331">Using MacPorts To Install Ruby 1.9.1 and Rails 2.3.0 RC1</a></li>
+  <li><a href="https://rvm.beginrescueend.com/">RVM official site</a></li>
+  <li><a href="https://rvm.beginrescueend.com/rvm/install/">Installing RVM</a></li>
+  <li><a href="http://stackoverflow.com/questions/3464285/ruby-on-mac-osx-via-mac-ports">Ruby on Mac OSX via Mac Ports</a></li>
+  <li><a href="http://www.alessandrobaffa.it/2011/04/18/using-macports-to-install-ruby-1-9-x/">Using MacPorts To Install Ruby 1.9.x</a></li>
+  <li><a href="http://www.ruby-forum.com/topic/178659#782331">Using MacPorts To Install Ruby 1.9.1 and Rails 2.3.0 RC1</a></li>
 </ul>
-
 ]]></content>
   </entry>
   
@@ -123,119 +120,110 @@ $ which ruby
 
 <p>本欲在开场中矫揉造作一番，可提起笔来却不知道写些什么。一通挣扎，不仅释然，还是顺其自然，想到什么就写什么吧，于是就有了这个《<strong>乱弹</strong>》。</p>
 
-<h2>缘起</h2>
+<h2 id="section">缘起</h2>
 
 <p>这个Blog是关于什么的？嗯～，我不是科学界的一名大师（怪兽？），而是茫茫工程界一枚迷途小书童，一个三脚猫的业余码农，狂热的TeX/LaTeX爱好者，Google的粉丝，New Age音乐的聆听者，于是我想这里就应该是关于这些东西的吧，。</p>
 
 <ul>
-<li>TeX/LaTeX</li>
-<li>Matlab</li>
-<li>R</li>
-<li>TikZ/pgf</li>
-<li>Python</li>
-<li>Ruby</li>
-<li>Mac</li>
-<li>其他的一些杂七杂八</li>
+  <li>TeX/LaTeX</li>
+  <li>Matlab</li>
+  <li>R</li>
+  <li>TikZ/pgf</li>
+  <li>Python</li>
+  <li>Ruby</li>
+  <li>Mac</li>
+  <li>其他的一些杂七杂八</li>
 </ul>
-
 
 <!-- more -->
 
-
-<h2>初探</h2>
+<h2 id="section-1">初探</h2>
 
 <p>既然对建站一无所知，不如就从此入手吧，前面这几篇就说说如何用Jekyll建站吧。</p>
 
-<h3>纷至沓来的概念</h3>
+<h3 id="section-2">纷至沓来的概念</h3>
 
 <ul>
-<li><a href="http://liquidmarkup.org/">Liquid</a></li>
-<li><a href="http://daringfireball.net/projects/markdown/">Markdown</a></li>
-<li><a href="http://jekyllrb.com/">Jekyll</a></li>
-<li><a href="http://www.yaml.org/">YAML</a></li>
-<li><a href="http://disqus.com/">DISQUS</a></li>
-<li><a href="http://octopress.org/">Octopress</a>, an exmple from <a href="http://lucifr.com/">Lucifr</a></li>
+  <li><a href="http://liquidmarkup.org/">Liquid</a></li>
+  <li><a href="http://daringfireball.net/projects/markdown/">Markdown</a></li>
+  <li><a href="http://jekyllrb.com/">Jekyll</a></li>
+  <li><a href="http://www.yaml.org/">YAML</a></li>
+  <li><a href="http://disqus.com/">DISQUS</a></li>
+  <li><a href="http://octopress.org/">Octopress</a>, an exmple from <a href="http://lucifr.com/">Lucifr</a></li>
 </ul>
 
-
-<h3>网站</h3>
+<h3 id="section-3">网站</h3>
 
 <ul>
-<li>Jekyll
+  <li>Jekyll
+    <ul>
+      <li><a href="http://yihui.name/">谢益辉</a>, source  <a href="https://github.com/yihui/yihui.github.com">@github</a></li>
+      <li><a href="http://lhzhang.com/">setlmpl</a></li>
+      <li><a href="http://ztpala.com/">Tao</a></li>
+      <li><a href="http://www.ksornberger.com/">Kevin Sornberger</a> source <a href="https://github.com/ksornberger/ksornberger.github.com">@github</a></li>
+    </ul>
+  </li>
+  <li>Octopress
+    <ul>
+      <li><a href="http://lucifr.com/">Lucifr</a></li>
+      <li><a href="http://zespia.tw/">Zespia</a></li>
+      <li><a href="http://chenyufei.info/">Chen Yufei</a></li>
+      <li><a href="http://blog.xdite.net/">Blog.XDite.net</a></li>
+      <li><a href="http://alexzeitler.com/">Alex Zeitler</a></li>
+      <li><a href="http://zanshin.net/">Zanshin.net</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="section-4">参考文献</h3>
 
 <ul>
-<li><a href="http://yihui.name/">谢益辉</a>, source  <a href="https://github.com/yihui/yihui.github.com">@github</a></li>
-<li><a href="http://lhzhang.com/">setlmpl</a></li>
-<li><a href="http://ztpala.com/">Tao</a></li>
-<li><a href="http://www.ksornberger.com/">Kevin Sornberger</a> source <a href="https://github.com/ksornberger/ksornberger.github.com">@github</a></li>
+  <li><a href="http://chenyufei.info/blog/2011-12-13/migrate-to-octopress/">博客转用 Octopress</a></li>
+  <li><a href="http://zespia.tw/blog/2012/01/14/hello-octopress/">Hello Octopress!</a></li>
+  <li><a href="http://www.alessandrobaffa.it/2011/04/18/using-macports-to-install-ruby-1-9-x/">Using MacPorts To Install Ruby 1.9.x</a></li>
+  <li><a href="http://www.ruby-forum.com/topic/178659#782331">Using MacPorts To Install Ruby 1.9.1 and Rails 2.3.0 RC1</a></li>
 </ul>
-</li>
-<li>Octopress
+
+<h3 id="section-5">工具</h3>
 
 <ul>
-<li><a href="http://lucifr.com/">Lucifr</a></li>
-<li><a href="http://zespia.tw/">Zespia</a></li>
-<li><a href="http://chenyufei.info/">Chen Yufei</a></li>
-<li><a href="http://blog.xdite.net/">Blog.XDite.net</a></li>
-<li><a href="http://alexzeitler.com/">Alex Zeitler</a></li>
-<li><a href="http://zanshin.net/">Zanshin.net</a></li>
-</ul>
-</li>
+  <li><a href="http://www.sublimetext.com/">Sublime Text 2</a>, replacement of <a href="http://macromates.com/">TextMate</a> (BBEdit? no)</li>
 </ul>
 
-
-<h3>参考文献</h3>
+<h3 id="section-6">目标</h3>
 
 <ul>
-<li><a href="http://chenyufei.info/blog/2011-12-13/migrate-to-octopress/">博客转用 Octopress</a></li>
-<li><a href="http://zespia.tw/blog/2012/01/14/hello-octopress/">Hello Octopress!</a></li>
-<li><a href="http://www.alessandrobaffa.it/2011/04/18/using-macports-to-install-ruby-1-9-x/">Using MacPorts To Install Ruby 1.9.x</a></li>
-<li><a href="http://www.ruby-forum.com/topic/178659#782331">Using MacPorts To Install Ruby 1.9.1 and Rails 2.3.0 RC1</a></li>
+  <li>Blogging with comments</li>
+  <li>Blogging with codes</li>
+  <li>Blogging with graph</li>
+  <li>Blogging with equations</li>
+  <li>Blogging with LaTeX</li>
 </ul>
 
-
-<h3>工具</h3>
+<h3 id="section-7">技术</h3>
 
 <ul>
-<li><a href="http://www.sublimetext.com/">Sublime Text 2</a>, replacement of <a href="http://macromates.com/">TextMate</a> (BBEdit? no)</li>
+  <li>模版</li>
+  <li>插图</li>
+  <li>字体</li>
+  <li>代码，利用<a href="http://pygments.org/">Pygments</a></li>
+  <li>公式</li>
 </ul>
 
-
-<h3>目标</h3>
+<h2 id="step-by-step-tutorial">预告，Step by step tutorial</h2>
 
 <ul>
-<li>Blogging with comments</li>
-<li>Blogging with codes</li>
-<li>Blogging with graph</li>
-<li>Blogging with equations</li>
-<li>Blogging with LaTeX</li>
+  <li>Jekyll</li>
+  <li>Jekyll Bootstrape</li>
+  <li>Markdown</li>
+  <li>Sublime Text 2</li>
 </ul>
 
-
-<h3>技术</h3>
-
-<ul>
-<li>模版</li>
-<li>插图</li>
-<li>字体</li>
-<li>代码，利用<a href="http://pygments.org/">Pygments</a></li>
-<li>公式</li>
-</ul>
-
-
-<h2>预告，Step by step tutorial</h2>
-
-<ul>
-<li>Jekyll</li>
-<li>Jekyll Bootstrape</li>
-<li>Markdown</li>
-<li>Sublime Text 2</li>
-</ul>
-
-
-<h2>Blog列表</h2>
+<h2 id="blog">Blog列表</h2>
 
 <ul class="posts">
+  
+    <li><span>21 Mar 2012</span> &raquo; <a href="/blog/2012/03/21/latex-support-for-octopress/">LaTeX Support for Octopress</a></li>
   
     <li><span>26 Feb 2012</span> &raquo; <a href="/blog/2012/02/26/install-ruby-with-rvm/">Install Ruby with RVM</a></li>
   
@@ -243,17 +231,11 @@ $ which ruby
   
 </ul>
 
-
 <p><del>其他</del></p>
 
 <!-- Read [Jekyll Quick Start](http://jekyllbootstrap.com/usage/jekyll-quick-start.html) -->
 
-
-
-
 <!-- Complete usage and documentation available at: [Jekyll Bootstrap](http://jekyllbootstrap.com) -->
-
-
 <!-- 
 ## Update Author Attributes
 
@@ -278,7 +260,6 @@ When you don't need the samples anymore just delete the `_posts/core-samples` fo
 
 Here's a sample "posts list".
  -->
-
 ]]></content>
   </entry>
   

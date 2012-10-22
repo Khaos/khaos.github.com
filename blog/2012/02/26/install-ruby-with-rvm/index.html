@@ -9,7 +9,7 @@
   <meta name="author" content="Dazhi Jiang">
 
   
-  <meta name="description" content="自打从 Yihui Xie 那里听说了Jekyll，并照着 Jekyll Bootstrap 折腾了一番，便喜欢上了这个静态网站构建系统。不久从 Lucifr 看到 Octopress 这个变身版的Jekyll，于是就更加要齐齐苦苦了。Octopress依赖于Ruby 1.9.2+， &hellip;">
+  <meta name="description" content="自打从Yihui Xie那里听说了Jekyll，并照着Jekyll Bootstrap折腾了一番，便喜欢上了这个静态网站构建系统。不久从Lucifr看到Octopress这个变身版的Jekyll，于是就更加要齐齐苦苦了。Octopress依赖于Ruby 1.9.2+，所以这里介绍一下如何用Ruby &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -31,6 +31,42 @@
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<!-- DISQUS JavaScript configuration variables -->
+<script type="text/javascript">
+    var disqus_developer = 1; // developer mode is on
+</script>
   
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -104,16 +140,15 @@
   </header>
 
 
-<div class="entry-content"><p>自打从 <a href="http://yihui.name/">Yihui Xie</a> 那里听说了<a href="http://jekyllrb.com/">Jekyll</a>，并照着 <a href="http://jekyllbootstrap.com/">Jekyll Bootstrap</a> 折腾了一番，便喜欢上了这个静态网站构建系统。不久从 <a href="http://lucifr.com/">Lucifr</a> 看到 <a href="http://octopress.org/">Octopress</a> 这个变身版的Jekyll，于是就更加要齐齐苦苦了。Octopress依赖于Ruby 1.9.2+，所以这里介绍一下如何用 <a href="https://rvm.beginrescueend.com/">Ruby Version Manager (RVM)</a>。</p>
+<div class="entry-content"><p>自打从<a href="http://yihui.name/">Yihui Xie</a>那里听说了<a href="http://jekyllrb.com/">Jekyll</a>，并照着<a href="http://jekyllbootstrap.com/">Jekyll Bootstrap</a>折腾了一番，便喜欢上了这个静态网站构建系统。不久从<a href="http://lucifr.com/">Lucifr</a>看到<a href="http://octopress.org/">Octopress</a>这个变身版的Jekyll，于是就更加要齐齐苦苦了。Octopress依赖于Ruby 1.9.2+，所以这里介绍一下如何用<a href="https://rvm.beginrescueend.com/">Ruby Version Manager (RVM)</a>。</p>
 
 <!-- more -->
 
-
-<h2>Uninstall all ruby-related MacPorts&#8217; ports</h2>
+<h2 id="uninstall-all-ruby-related-macports-ports">Uninstall all ruby-related MacPorts’ ports</h2>
 
 <p>由于我的Ruby是用MacPorts安装的，所以首先需要把这个版本的Ruby卸载掉。</p>
 
-<h3>卸载相关Ports</h3>
+<h3 id="ports">卸载相关Ports</h3>
 
 <pre><code>$ sudo port uninstall rb19-*
 $ sudo port clean rb19-*
@@ -125,7 +160,7 @@ $ sudo port uninstall ruby
 $ sudo port clean ruby
 </code></pre>
 
-<h3>移除Gems</h3>
+<h3 id="gems">移除Gems</h3>
 
 <pre><code>$ sudo rm -rf /opt/local/lib/ruby
 $ sudo rm -rf /opt/local/lib/ruby19
@@ -133,7 +168,7 @@ $ sudo rm -rf /opt/local/bin/rdiscount
 $ sudo rm -rf /opt/local/bin/jekyll
 </code></pre>
 
-<h2>Install RVM</h2>
+<h2 id="install-rvm">Install RVM</h2>
 
 <p>打开Terminal，确定处于当前用户目录下 (~)，运行如下命令</p>
 
@@ -167,36 +202,34 @@ $ sudo rm -rf /opt/local/bin/jekyll
 <pre><code>$ rvm install 1.9.3
 </code></pre>
 
-<h2>Use newly installed Ruby</h2>
+<h2 id="use-newly-installed-ruby">Use newly installed Ruby</h2>
 
 <pre><code>$ rvm use 1.9.2
 </code></pre>
 
-<p>  check ruby version</p>
+<p>check ruby version
+    $ ruby -v
+    $ which ruby</p>
 
-<pre><code>$ ruby -v
-$ which ruby
-</code></pre>
-
-<h2>Problems</h2>
+<h2 id="problems">Problems</h2>
 
 <ul>
-<li><p>ArgumentError: invalid byte sequence in US-ASCII</p>
+  <li>
+    <p>ArgumentError: invalid byte sequence in US-ASCII</p>
 
-<p>See <a href="https://github.com/rails/jquery-rails/pull/35">https://github.com/rails/jquery-rails/pull/35</a></p></li>
+    <p>See <a href="https://github.com/rails/jquery-rails/pull/35">https://github.com/rails/jquery-rails/pull/35</a></p>
+  </li>
 </ul>
 
-
-<h2>References</h2>
+<h2 id="references">References</h2>
 
 <ul>
-<li><a href="https://rvm.beginrescueend.com/">RVM official site</a></li>
-<li><a href="https://rvm.beginrescueend.com/rvm/install/">Installing RVM</a></li>
-<li><a href="http://stackoverflow.com/questions/3464285/ruby-on-mac-osx-via-mac-ports">Ruby on Mac OSX via Mac Ports</a></li>
-<li><a href="http://www.alessandrobaffa.it/2011/04/18/using-macports-to-install-ruby-1-9-x/">Using MacPorts To Install Ruby 1.9.x</a></li>
-<li><a href="http://www.ruby-forum.com/topic/178659#782331">Using MacPorts To Install Ruby 1.9.1 and Rails 2.3.0 RC1</a></li>
+  <li><a href="https://rvm.beginrescueend.com/">RVM official site</a></li>
+  <li><a href="https://rvm.beginrescueend.com/rvm/install/">Installing RVM</a></li>
+  <li><a href="http://stackoverflow.com/questions/3464285/ruby-on-mac-osx-via-mac-ports">Ruby on Mac OSX via Mac Ports</a></li>
+  <li><a href="http://www.alessandrobaffa.it/2011/04/18/using-macports-to-install-ruby-1-9-x/">Using MacPorts To Install Ruby 1.9.x</a></li>
+  <li><a href="http://www.ruby-forum.com/topic/178659#782331">Using MacPorts To Install Ruby 1.9.1 and Rails 2.3.0 RC1</a></li>
 </ul>
-
 </div>
 
 
@@ -247,6 +280,8 @@ $ which ruby
         <a class="basic-alignment left" href="/blog/2012/02/26/starting/" title="Previous Post: 乱弹，学步">&laquo; 乱弹，学步</a>
       
       
+        <a class="basic-alignment right" href="/blog/2012/03/21/latex-support-for-octopress/" title="Next Post: LaTeX Support for Octopress">LaTeX Support for Octopress &raquo;</a>
+      
     </p>
   </footer>
 </article>
@@ -264,6 +299,10 @@ $ which ruby
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/03/21/latex-support-for-octopress/">LaTeX Support for Octopress</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2012/02/26/install-ruby-with-rvm/">Install Ruby with RVM</a>
