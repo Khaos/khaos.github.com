@@ -4,7 +4,7 @@
   <title><![CDATA[Khaos]]></title>
   <link href="http://Khaos.github.com/atom.xml" rel="self"/>
   <link href="http://Khaos.github.com/"/>
-  <updated>2012-03-21T16:39:49+00:00</updated>
+  <updated>2012-10-22T17:31:13+08:00</updated>
   <id>http://Khaos.github.com/</id>
   <author>
     <name><![CDATA[Dazhi Jiang]]></name>
@@ -14,35 +14,9 @@
 
   
   <entry>
-    <title type="html"><![CDATA[LaTeX Support for Octopress]]></title>
-    <link href="http://Khaos.github.com/blog/2012/03/21/latex-support-for-octopress/"/>
-    <updated>2012-03-21T10:19:00+00:00</updated>
-    <id>http://Khaos.github.com/blog/2012/03/21/latex-support-for-octopress</id>
-    <content type="html"><![CDATA[<script type="math/tex; mode=display">
-\begin{align*}
-  & \phi(x,y) = \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right)
-  = \sum_{i=1}^n \sum_{j=1}^n x_i y_j \phi(e_i, e_j) = \\
-  & (x_1, \ldots, x_n) \left( \begin{array}{ccc}
-      \phi(e_1, e_1) & \cdots & \phi(e_1, e_n) \\
-      \vdots & \ddots & \vdots \\
-      \phi(e_n, e_1) & \cdots & \phi(e_n, e_n)
-    \end{array} \right)
-  \left( \begin{array}{c}
-      y_1 \\
-      \vdots \\
-      y_n
-    \end{array} \right)
-\end{align*}
-</script>
-
-<p>$\rm{\LaTeX}$</p>
-]]></content>
-  </entry>
-  
-  <entry>
     <title type="html"><![CDATA[Install Ruby with RVM]]></title>
     <link href="http://Khaos.github.com/blog/2012/02/26/install-ruby-with-rvm/"/>
-    <updated>2012-02-26T09:33:00+00:00</updated>
+    <updated>2012-02-26T09:33:00+08:00</updated>
     <id>http://Khaos.github.com/blog/2012/02/26/install-ruby-with-rvm</id>
     <content type="html"><![CDATA[<p>自打从<a href="http://yihui.name/">Yihui Xie</a>那里听说了<a href="http://jekyllrb.com/">Jekyll</a>，并照着<a href="http://jekyllbootstrap.com/">Jekyll Bootstrap</a>折腾了一番，便喜欢上了这个静态网站构建系统。不久从<a href="http://lucifr.com/">Lucifr</a>看到<a href="http://octopress.org/">Octopress</a>这个变身版的Jekyll，于是就更加要齐齐苦苦了。Octopress依赖于Ruby 1.9.2+，所以这里介绍一下如何用<a href="https://rvm.beginrescueend.com/">Ruby Version Manager (RVM)</a>。</p>
 
@@ -140,7 +114,7 @@ $ sudo rm -rf /opt/local/bin/jekyll
   <entry>
     <title type="html"><![CDATA[乱弹，学步]]></title>
     <link href="http://Khaos.github.com/blog/2012/02/26/starting/"/>
-    <updated>2012-02-26T09:25:00+00:00</updated>
+    <updated>2012-02-26T09:25:00+08:00</updated>
     <id>http://Khaos.github.com/blog/2012/02/26/starting</id>
     <content type="html"><![CDATA[<p>万事开头难，一篇杂乱的开场白。</p>
 
@@ -148,7 +122,7 @@ $ sudo rm -rf /opt/local/bin/jekyll
 
 <h2 id="section">缘起</h2>
 
-<p>这个Blog是关于什么的？嗯～，我不是科学界的一名大师（怪兽？），而是茫茫工程界一枚迷途小书童，一个三脚猫的业余码农，狂热的TeX/LaTeX爱好者，Google的粉丝，New Age音乐的聆听者，于是我想这里就应该是关于这些东西的吧，。</p>
+<p>这个Blog是关于什么的？嗯～，我不是科学界的一名大师（怪兽？），而是茫茫工程界一枚迷途小书童，一个三脚猫的业余码农，狂热的TeX/LaTeX爱好者，Google的粉丝，New Age音乐的聆听者，于是我想这里就应该是关于这些东西的吧，</p>
 
 <ul>
   <li>TeX/LaTeX</li>
@@ -248,8 +222,6 @@ $ sudo rm -rf /opt/local/bin/jekyll
 <h2 id="blog">Blog列表</h2>
 
 <ul class="posts">
-  
-    <li><span>21 Mar 2012</span> &raquo; <a href="http://Khaos.github.com/blog/2012/03/21/latex-support-for-octopress/">LaTeX Support for Octopress</a></li>
   
     <li><span>26 Feb 2012</span> &raquo; <a href="http://Khaos.github.com/blog/2012/02/26/install-ruby-with-rvm/">Install Ruby with RVM</a></li>
   
