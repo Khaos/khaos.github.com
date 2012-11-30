@@ -4,7 +4,7 @@
   <title><![CDATA[Khaos]]></title>
   <link href="http://Khaos.github.com/atom.xml" rel="self"/>
   <link href="http://Khaos.github.com/"/>
-  <updated>2012-11-29T22:05:23+08:00</updated>
+  <updated>2012-12-01T03:10:22+08:00</updated>
   <id>http://Khaos.github.com/</id>
   <author>
     <name><![CDATA[Dazhi Jiang]]></name>
@@ -118,7 +118,7 @@ $ sudo rm -rf /opt/local/bin/jekyll
     <id>http://Khaos.github.com/blog/2012/02/26/starting</id>
     <content type="html"><![CDATA[<p>万事开头难，一篇杂乱的开场白。</p>
 
-<p>本欲在开场中矫揉造作一番，可提起笔来却不知道写些什么。一通挣扎，不仅释然，还是顺其自然，想到什么就写什么吧，于是就有了这个《<strong>乱弹</strong>》。</p>
+<p>本欲在开场中矫揉造作一番，可提起笔来却不知道写些什么。一通挣扎，不禁释然，还是顺其自然，随意写些东西吧，于是有了这个《<strong>乱弹</strong>》。</p>
 
 <!-- more -->
 
@@ -147,9 +147,10 @@ $ sudo rm -rf /opt/local/bin/jekyll
   <li><a href="http://liquidmarkup.org/">Liquid</a></li>
   <li><a href="http://daringfireball.net/projects/markdown/">Markdown</a></li>
   <li><a href="http://jekyllrb.com/">Jekyll</a></li>
-  <li><a href="http://www.yaml.org/">YAML</a></li>
-  <li><a href="http://disqus.com/">DISQUS</a></li>
   <li><a href="http://octopress.org/">Octopress</a>, an exmple from <a href="http://lucifr.com/">Lucifr</a></li>
+  <li><a href="http://www.yaml.org/">YAML</a></li>
+  <li><a href="http://sass-lang.com/">Sass - Syntactically Awesome Stylesheets</a></li>
+  <li><a href="http://disqus.com/">DISQUS</a></li>
 </ul>
 
 <h3 id="section-3">网站</h3>
@@ -213,10 +214,16 @@ $ sudo rm -rf /opt/local/bin/jekyll
 <h2 id="step-by-step-tutorial">预告，Step by step tutorial</h2>
 
 <ul>
-  <li>Jekyll</li>
-  <li>Jekyll Bootstrape</li>
+  <li><del>Jekyll</del></li>
+  <li><del>Jekyll Bootstrape</del></li>
+  <li><del>Markdown</del></li>
+  <li>
+    <p><del>Sublime Text 2</del></p>
+  </li>
+  <li>Octopress</li>
+  <li>Theme</li>
   <li>Markdown</li>
-  <li>Sublime Text 2</li>
+  <li>TextMate 2</li>
 </ul>
 
 <h2 id="blog">Blog列表</h2>

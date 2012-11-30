@@ -5,11 +5,20 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Khaos</title>
+  <title>experimental - Khaos</title>
   <meta name="author" content="Dazhi Jiang">
 
   
-  <meta name="description" content="自打从Yihui Xie那里听说了Jekyll，并照着Jekyll Bootstrap折腾了一番，便喜欢上了这个静态网站构建系统。不久从Lucifr看到Octopress这个变身版的Jekyll，于是就更加要齐齐苦苦了。Octopress依赖于Ruby 1.9.2+，所以这里介绍一下如何用Ruby &hellip;">
+  <meta name="description" content="Experimental Dec 1st, 2012 Info Text
+another line Normal text Warning Text
+line two 1
+2
+3
+4
+# Comment line
+rake generate
+rake deploy
+if a end some &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +27,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://Khaos.github.com/">
+  <link rel="canonical" href="http://Khaos.github.com/blog/experimental/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -78,7 +87,7 @@
 	<div class="fira-nav">
 	  <nav role="navigation"><ul class="main-navigation">
 	
-	<li class="home current">
+	<li class="home">
 		<a href="/" rel="nofollow" title="首页">
 			<i class="icon-home"></i>
 		</a>
@@ -132,19 +141,12 @@
 
 	</section>
 	
-	<div class="blog-index">
+	<div>
+<article role="article" class="fira-article">
   
-  
-  
-    <article class="fira-article index">
-      
   <header>
-    
-      <h3><a href="/blog/2012/02/26/install-ruby-with-rvm/">Install Ruby With RVM</a></h3>
-    
-    
-      <p class="meta">
-        
+    <h1 class="entry-title">Experimental</h1>
+    <p class="meta">
 
 
 
@@ -156,79 +158,132 @@
   
 
 
-<time datetime="2012-02-26T09:33:00+08:00" pubdate data-updated="true">Feb 26<span>th</span>, 2012</time>
-        
-         | <a href="/blog/2012/02/26/install-ruby-with-rvm/#disqus_thread">Comments</a>
-        
-      </p>
-    
+<time datetime="2012-12-01T02:35:00+08:00" pubdate data-updated="true">Dec 1<span>st</span>, 2012</time></p>
   </header>
+  
+  <p class="info">Info Text<br />
+another line</p>
 
+<p>Normal text</p>
 
-  <div class="entry-content"><p>自打从<a href="http://yihui.name/">Yihui Xie</a>那里听说了<a href="http://jekyllrb.com/">Jekyll</a>，并照着<a href="http://jekyllbootstrap.com/">Jekyll Bootstrap</a>折腾了一番，便喜欢上了这个静态网站构建系统。不久从<a href="http://lucifr.com/">Lucifr</a>看到<a href="http://octopress.org/">Octopress</a>这个变身版的Jekyll，于是就更加要齐齐苦苦了。Octopress依赖于Ruby 1.9.2+，所以这里介绍一下如何用<a href="https://rvm.beginrescueend.com/">Ruby Version Manager (RVM)</a>。</p>
+<p class="warning">Warning Text<br />
+line two</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line"><span class="c1"># Comment line</span>
+</span><span class="line"><span class="n">rake</span> <span class="n">generate</span>
+</span><span class="line"><span class="n">rake</span> <span class="n">deploy</span>
+</span><span class="line"><span class="k">if</span> <span class="n">a</span> <span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>some thing here <code>inline code</code></p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>LaTeX code highlighting</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class="tex"><span class="line"><span class="k">\begin</span><span class="nb">{</span>equation<span class="nb">}</span>
+</span><span class="line">    x=f(x)
+</span><span class="line"><span class="k">\end</span><span class="nb">{</span>equation<span class="nb">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>\begin{equation}
+x=f(x)
+\end{equation}</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>R code highlighting</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class="r"><span class="line">library<span class="p">(</span>ggplot2<span class="p">)</span>
+</span><span class="line">a <span class="o">&lt;-</span> <span class="m">1</span>
+</span><span class="line">install.packages<span class="p">(</span>knitr<span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<div><script src="https://gist.github.com/996818.js?file="></script>
+<noscript><pre><code>@@ -590,7 +590,7 @@ class SpritesTest &lt; Test::Unit::TestCase
+  it &quot;should generate a sprite from nested folders&quot; do
+    css = render &lt;&lt;-SCSS
+-     @import &quot;nested/*.png&quot;;
++     @import &quot;nested/**/*.png&quot;;
+      @include all-nested-sprites;
+    SCSS
+    assert_correct css, &lt;&lt;-CSS</code></pre></noscript></div>
+
+<pre><code>$ echo "Hello world"
+</code></pre>
+
+<blockquote>
+  <p>Block queto  <br />
+line 2</p>
+</blockquote>
+
+<table>
+  <tbody>
+    <tr>
+      <td>A simple</td>
+      <td>table</td>
+    </tr>
+    <tr>
+      <td>with multiple</td>
+      <td>lines</td>
+    </tr>
+  </tbody>
+</table>
+
+<table rules="groups">
+  <thead>
+    <tr>
+      <th style="text-align: left">Header1</th>
+      <th style="text-align: center">Header2</th>
+      <th style="text-align: right">Header3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">cell1</td>
+      <td style="text-align: center">cell2</td>
+      <td style="text-align: right">cell3</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">cell4</td>
+      <td style="text-align: center">cell5</td>
+      <td style="text-align: right">cell6</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td style="text-align: left">cell1</td>
+      <td style="text-align: center">cell2</td>
+      <td style="text-align: right">cell3</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">cell4</td>
+      <td style="text-align: center">cell5</td>
+      <td style="text-align: right">cell6</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td style="text-align: left">Foot1</td>
+      <td style="text-align: center">Foot2</td>
+      <td style="text-align: right">Foot3</td>
+    </tr>
+  </tfoot>
+</table>
+
+  
+</article>
+
+  <section>
+    <h2>Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/02/26/install-ruby-with-rvm/" class="icon-shuffle">  Continue reading</a>
-    </footer>
-  
 
-
-    </article>
-  
-  
-    <article class="fira-article index">
-      
-  <header>
-    
-      <h3><a href="/blog/2012/02/26/starting/">乱弹，学步</a></h3>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-02-26T09:25:00+08:00" pubdate data-updated="true">Feb 26<span>th</span>, 2012</time>
-        
-         | <a href="/blog/2012/02/26/starting/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>万事开头难，一篇杂乱的开场白。</p>
-
-<p>本欲在开场中矫揉造作一番，可提起笔来却不知道写些什么。一通挣扎，不禁释然，还是顺其自然，随意写些东西吧，于是有了这个《<strong>乱弹</strong>》。</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/02/26/starting/" class="icon-shuffle">  Continue reading</a>
-    </footer>
-  
-
-
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
 <aside class="sidebar">
   
     <section>
@@ -249,7 +304,7 @@
 <section>
   <h3>GitHub Repos</h3>
   <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   
   <a href="https://github.com/Khaos">@Khaos</a> on GitHub
@@ -278,12 +333,15 @@
 <section>
   <h3>Scan Me</h3>
   
-  <p><img src="images/QR-github-logo.svg" width="150" height="150"></p>
+    
+	  <p><img src="../../../images/QR-github-logo.svg" width="150" height="150"></p>
+	
   
 </section>
 
   
 </aside>
+
 
 	
 	<footer role="contentinfo" class="inner"><p>
@@ -300,7 +358,10 @@
       var disqus_shortname = 'Dazhi';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://Khaos.github.com/blog/experimental/index.html';
+        var disqus_url = 'http://Khaos.github.com/blog/experimental/index.html';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
