@@ -9,7 +9,7 @@
   <meta name="author" content="Dazhi Jiang">
 
   
-  <meta name="description" content="Lorem Ipsum 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in orci erat. Ut eros nunc, malesuada vitae suscipit nec, tristique &hellip;">
+  <meta name="description" content="Lorem Ipsum1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in orci erat. Ut eros nunc, malesuada vitae suscipit nec, tristique quis &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -138,7 +138,7 @@
 <time datetime="2012-12-01T02:35:00+08:00" pubdate data-updated="true">Dec 1<span>st</span>, 2012</time></p>
   </header>
   
-  <div class="entry-content"><h1 id="lorem-ipsum-lorem-ipsum">Lorem Ipsum <sup id="fnref:lorem-ipsum"><a href="#fn:lorem-ipsum" rel="footnote">1</a></sup>.</h1>
+  <div class="entry-content"><h1 id="lorem-ipsumlorem-ipsum">Lorem Ipsum<sup id="fnref:lorem-ipsum"><a href="#fn:lorem-ipsum" rel="footnote">1</a></sup></h1>
 
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in orci erat. Ut eros nunc, malesuada vitae suscipit nec, tristique quis nisl. Suspendisse potenti. Donec pulvinar nibh ut purus elementum a viverra urna pretium. Morbi consectetur turpis eget nisi condimentum nec ornare dolor molestie. Curabitur vehicula porttitor pulvinar. Maecenas porta massa eros, at vehicula elit. Nunc facilisis ullamcorper aliquam. Cras sollicitudin ornare adipiscing. Suspendisse fermentum, velit ac imperdiet aliquet, diam metus scelerisque nunc, quis convallis neque quam quis leo. Vivamus semper ultrices lacus, quis pretium risus sodales sed. Morbi eget dui ut nisi tincidunt vestibulum ac sed arcu. Phasellus lorem sapien, iaculis nec laoreet sit amet, malesuada non urna. Nunc vehicula feugiat neque, ac tempus nisi consequat at.</p>
 
@@ -147,7 +147,7 @@
 <h1 id="contents-kramdown">Contents (kramdown)</h1>
 
 <ul id="markdown-toc">
-  <li><a href="#lorem-ipsum-lorem-ipsum">Lorem Ipsum .</a></li>
+  <li><a href="#lorem-ipsumlorem-ipsum">Lorem Ipsum</a></li>
   <li><a href="#contents-kramdown">Contents (kramdown)</a></li>
   <li><a href="#block-styles">Block Styles</a></li>
   <li><a href="#code-blocks">Code Blocks</a></li>
@@ -210,15 +210,21 @@ line two</p>
 end
 </code></pre>
 
-<div><script src="https://gist.github.com/996818.js?file="></script>
-<noscript><pre><code>@@ -590,7 +590,7 @@ class SpritesTest &lt; Test::Unit::TestCase
-  it &quot;should generate a sprite from nested folders&quot; do
-    css = render &lt;&lt;-SCSS
--     @import &quot;nested/*.png&quot;;
-+     @import &quot;nested/**/*.png&quot;;
-      @include all-nested-sprites;
-    SCSS
-    assert_correct css, &lt;&lt;-CSS</code></pre></noscript></div>
+<div><script src="https://gist.github.com/4191653.js?file="></script>
+<noscript><pre><code>diff --git a/text-old.py b/text.py
+index ca50665..4b19226 100644
+--- a/text-old.py
++++ b/text.py
+@@ -17,7 +17,7 @@ from pygments.lexer import Lexer, LexerContext, RegexLexer, ExtendedRegexLexer,
+ from pygments.token import Punctuation, Text, Comment, Keyword, Name, String, \
+      Generic, Operator, Number, Whitespace, Literal
+ from pygments.util import get_bool_opt, ClassNotFound
+-from pygments.lexers.other import BashLexer
++from pygments.lexers.shell import BashLexer
+ 
+ __all__ = ['IniLexer', 'PropertiesLexer', 'SourcesListLexer', 'BaseMakefileLexer',
+            'MakefileLexer', 'DiffLexer', 'IrcLogsLexer', 'TexLexer',
+</code></pre></noscript></div>
 
 <h1 id="other-blocks">Other Blocks</h1>
 
