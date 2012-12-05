@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Programming | Khaos]]></title>
-  <link href="http://Khaos.github.com/blog/categories/programming/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Octopress | Khaos]]></title>
+  <link href="http://Khaos.github.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://Khaos.github.com/"/>
   <updated>2012-12-05T16:16:57+08:00</updated>
   <id>http://Khaos.github.com/</id>
@@ -212,104 +212,6 @@
     </li>
   </ol>
 </div>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Install Ruby with RVM]]></title>
-    <link href="http://Khaos.github.com/blog/2012/02/26/install-ruby-with-rvm/"/>
-    <updated>2012-02-26T09:33:00+08:00</updated>
-    <id>http://Khaos.github.com/blog/2012/02/26/install-ruby-with-rvm</id>
-    <content type="html"><![CDATA[<p>自打从<a href="http://yihui.name/">Yihui Xie</a>那里听说了<a href="http://jekyllrb.com/">Jekyll</a>，并照着<a href="http://jekyllbootstrap.com/">Jekyll Bootstrap</a>折腾了一番，便喜欢上了这个静态网站构建系统。不久从<a href="http://lucifr.com/">Lucifr</a>看到<a href="http://octopress.org/">Octopress</a>这个变身版的Jekyll，于是就更加要齐齐苦苦了。Octopress依赖于Ruby 1.9.2+，所以这里介绍一下如何用<a href="https://rvm.beginrescueend.com/">Ruby Version Manager (RVM)</a>。</p>
-
-<!-- more -->
-
-<h2 id="uninstall-all-ruby-related-macports-ports">Uninstall all ruby-related MacPorts’ ports</h2>
-
-<p>由于我的Ruby是用MacPorts安装的，所以首先需要把这个版本的Ruby卸载掉。</p>
-
-<h3 id="ports">卸载相关Ports</h3>
-
-<pre><code>$ sudo port uninstall rb19-*
-$ sudo port clean rb19-*
-$ sudo port uninstall ruby19
-$ sudo port clean ruby19
-$ sudo port uninstall rb-*
-$ sudo port clean rb-*
-$ sudo port uninstall ruby
-$ sudo port clean ruby
-</code></pre>
-
-<h3 id="gems">移除Gems</h3>
-
-<pre><code>$ sudo rm -rf /opt/local/lib/ruby
-$ sudo rm -rf /opt/local/lib/ruby19
-$ sudo rm -rf /opt/local/bin/rdiscount
-$ sudo rm -rf /opt/local/bin/jekyll
-</code></pre>
-
-<h2 id="install-rvm">Install RVM</h2>
-
-<p>打开Terminal，确定处于当前用户目录下 (~)，运行如下命令</p>
-
-<pre><code>$ bash -s stable &lt; &lt;(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer )
-</code></pre>
-
-<p>在所有打开的Terminal中运行</p>
-
-<pre><code>$ source /Users/Khaos/.rvm/scripts/rvm
-</code></pre>
-
-<p>可以用如下命令查看是否RVM已经安装配置成功</p>
-
-<pre><code>$ type rvm | head -1
-</code></pre>
-
-<p>如果返回<code>rvm is a function</code>，就说明成功了。</p>
-
-<p>查看RMV requirements</p>
-
-<pre><code>$ rvm requriements
-</code></pre>
-
-<p>在我的Mac上提示需要libksba，可以通过MacPorts安装</p>
-
-<pre><code>$ sudo port install libksba
-</code></pre>
-
-<p>利用RVM安装Ruby (e.g., 1.9.3)</p>
-
-<pre><code>$ rvm install 1.9.3
-</code></pre>
-
-<h2 id="use-newly-installed-ruby">Use newly installed Ruby</h2>
-
-<pre><code>$ rvm use 1.9.2
-</code></pre>
-
-<p>check ruby version
-    $ ruby -v
-    $ which ruby</p>
-
-<h2 id="problems">Problems</h2>
-
-<ul>
-  <li>
-    <p>ArgumentError: invalid byte sequence in US-ASCII</p>
-
-    <p>See <a href="https://github.com/rails/jquery-rails/pull/35">https://github.com/rails/jquery-rails/pull/35</a></p>
-  </li>
-</ul>
-
-<h2 id="references">References</h2>
-
-<ul>
-  <li><a href="https://rvm.beginrescueend.com/">RVM official site</a></li>
-  <li><a href="https://rvm.beginrescueend.com/rvm/install/">Installing RVM</a></li>
-  <li><a href="http://stackoverflow.com/questions/3464285/ruby-on-mac-osx-via-mac-ports">Ruby on Mac OSX via Mac Ports</a></li>
-  <li><a href="http://www.alessandrobaffa.it/2011/04/18/using-macports-to-install-ruby-1-9-x/">Using MacPorts To Install Ruby 1.9.x</a></li>
-  <li><a href="http://www.ruby-forum.com/topic/178659#782331">Using MacPorts To Install Ruby 1.9.1 and Rails 2.3.0 RC1</a></li>
-</ul>
 ]]></content>
   </entry>
   

@@ -65,21 +65,21 @@
 	  <nav role="navigation"><ul class="main-navigation">
 	
 	<li class="home">
-		<a href="/" rel="nofollow" title="首页">
+		<a href="/" rel="nofollow" title="Home">
 			<i class="icon-home"></i>
 		</a>
 	</li>
 	
 	
 	<li>
-		<a href="/blog/archives" rel="bookmark" title="文章归档">
+		<a href="/blog/archives" rel="bookmark" title="Archives">
 			<i class="icon-archive"></i>
 		</a>
 	</li>
 	
 	
 	<li>
-		<a href="/blog/contact" rel="bookmark" title="关于我">
+		<a href="/blog/contact" rel="bookmark" title="About me">
 			<i class="icon-mail"></i>
 		</a>
 	</li>
@@ -99,7 +99,7 @@
 	</li>
 	
 	<li>
-		<a href="/atom.xml" rel="nofollow" target="_blank" title="订阅我的博客">
+		<a href="/atom.xml" rel="nofollow" target="_blank" title="Click to subscribe">
 			<i class="icon-rss"></i>
 		</a>
 	</li>
@@ -160,10 +160,7 @@
 <ul id="markdown-toc">
   <li><a href="#lorem-ipsumlorem-ipsum">Lorem Ipsum</a>    <ul>
       <li><a href="#level-2-header">Level 2 Header</a>        <ul>
-          <li><a href="#level-3-header-a-very-very-very-very-very-long-header">Level 3 Header, a very very very very very long header</a>            <ul>
-              <li><a href="#level-4-header">Level 4 header</a></li>
-            </ul>
-          </li>
+          <li><a href="#level-3-header-a-very-very-very-very-very-long-header">Level 3 Header, a very very very very very long header</a></li>
         </ul>
       </li>
     </ul>
@@ -369,6 +366,10 @@ x=f(x)
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/12/05/generating-toc-in-octopress/">给Blog添加Table of Contents</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/12/05/moving/">搬家</a>
       </li>
     
@@ -484,12 +485,14 @@ x=f(x)
 
 
   
-  <script type="text/javascript">
-  jQuery(document).ready(function() {
-    // Put a TOC right before the entry content.
-    generateTOC('.entry-content', 'Contents');
-  });
-  </script>
+    
+      <script type="text/javascript">
+      jQuery(document).ready(function() {
+        // Put a TOC right before the entry content.
+        generateTOC('.entry-content', 'Contents');
+      });
+      </script>
+    
   
 
 

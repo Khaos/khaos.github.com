@@ -1,0 +1,510 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>给Blog添加Table of Contents - Khaos</title>
+  <meta name="author" content="Dazhi Jiang">
+
+  
+  <meta name="description" content="本文介绍在Octopress中添加 Table of Contents (ToC) 的方法。 维护长博客的时候，如果加上一个目录表 (Table of Contents)，会令读者对文章结构有一个清晰的把握。基于Octopress的博客系统，有两种常见的创建目录表的方式：基于 kramdown1 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://Khaos.github.com/blog/2012/12/05/generating-toc-in-octopress/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Khaos" type="application/atom+xml">
+  <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+<!-- mathjax config similar to math.stackexchange -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    messageStyle: "none",
+    "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+  });
+  MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<!-- DISQUS JavaScript configuration variables -->
+<script type="text/javascript">
+    var disqus_developer = 1; // developer mode is on
+</script>
+  
+
+</head>
+
+
+<body itemscope itemtype="http://schema.org/WebPage"    class="collapse-sidebar sidebar-footer fira" >
+	<div class="fira-nav">
+	  <nav role="navigation"><ul class="main-navigation">
+	
+	<li class="home">
+		<a href="/" rel="nofollow" title="Home">
+			<i class="icon-home"></i>
+		</a>
+	</li>
+	
+	
+	<li>
+		<a href="/blog/archives" rel="bookmark" title="Archives">
+			<i class="icon-archive"></i>
+		</a>
+	</li>
+	
+	
+	<li>
+		<a href="/blog/contact" rel="bookmark" title="About me">
+			<i class="icon-mail"></i>
+		</a>
+	</li>
+	
+	
+	<li>
+		<a href="http://weibo.com/djkhaos" target="_blank" rel="nofollow" title="我的微博">
+			<i class="icon-sina-weibo"></i>
+		</a>
+	</li>
+	
+	
+	<li>
+		<a href="https://github.com/Khaos" target="_blank" rel="nofollow" title="My GitHub">
+			<i class="icon-github"></i>
+		</a>
+	</li>
+	
+	<li>
+		<a href="/atom.xml" rel="nofollow" target="_blank" title="Click to subscribe">
+			<i class="icon-rss"></i>
+		</a>
+	</li>
+</ul>
+</nav>
+	</div>
+	
+	<section class="fira-header-bar">
+		
+	</section>
+	
+	
+	<div>
+<article class="fira-article" role="article">
+  
+  <header>
+    
+      <h1 class="fira-pagetit">给Blog添加Table of Contents</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-05T07:49:00+08:00" pubdate data-updated="true">Dec 5<span>th</span>, 2012</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p class="info" style="width: 378px">本文介绍在Octopress中添加 Table of Contents (ToC) 的方法。</p>
+
+<p>维护长博客的时候，如果加上一个目录表 (Table of Contents)，会令读者对文章结构有一个清晰的把握。基于Octopress的博客系统，有两种常见的创建目录表的方式：基于 kramdown<sup id="fnref:kramdown"><a href="#fn:kramdown" rel="footnote">1</a></sup> 的实现，以及基于 jQuery 插件的实现。前者基本上不需要配置，仅要求把默认的 Markdown parser 改为 kramdown 即可。后者则需要对系统进行相对较多的修改。</p>
+
+<!-- more -->
+
+<h2 id="kramdowntoc">方式一：利用kramdown内嵌的ToC功能</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#kramdowntoc">方式一：利用kramdown内嵌的ToC功能</a>    <ul>
+      <li><a href="#section">实现</a></li>
+      <li><a href="#demo">Demo</a></li>
+    </ul>
+  </li>
+  <li><a href="#jquerytoc">方式二：利用jQuery的ToC插件</a>    <ul>
+      <li><a href="#section-1">实现</a></li>
+      <li><a href="#demo-1">Demo</a></li>
+    </ul>
+  </li>
+  <li><a href="#section-2">测试部分</a>    <ul>
+      <li><a href="#h3">H3</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>kramdown 是一款由Ruby实现的Markdown解析器。它扩展的标准Markdown语言，添加了很多语法，其中一个就是内置了ToC的实现。这让在基于Jekyll/Octopress的博客系统中插入ToC变得简单而灵活，但是不幸的是，它的目录结构和层次需要在<code>_config.yml</code>中指定，也就是说，这些设定是全站的，你无法在某一篇Blog中使用不同于全站的ToC结构。</p>
+
+<h3 id="section">实现</h3>
+
+<p>这种方式的配置很简单，仅需要在你的<code>_config.yml</code>文件中，将默认的 Markdown parser 改为 kramdown，也即，</p>
+
+<pre><code>markdown: kramdown
+</code></pre>
+
+<p>在kramdown中，默认的目录树层次是从<code>h1</code>到<code>h6</code>，你可以用下的设定将这个层次改为从<code>h1</code>到<code>h3</code>，</p>
+
+<pre><code>kramdown:
+    toc_levels: 1..3
+</code></pre>
+
+<p>插入ToC也很简单，几乎在你的文章任何地方，加入下面的代码，在相应的部分kramdown就会帮你生成并插入一个ToC，</p>
+
+<pre><code>* Put anything here
+{:toc}
+</code></pre>
+
+<p>余下的事情就是给你的ToC润色，需要修改的样式是<code>ul#markdown-toc</code>。</p>
+
+<h3 id="demo">Demo</h3>
+
+<p>右侧透明背景的ToC即是利用kramdown实现的。由于我定义了<code>toc_levels: 1..3</code>，所以低于<code>h3</code>的标题并未出现在表中。</p>
+
+<h2 id="jquerytoc">方式二：利用jQuery的ToC插件</h2>
+
+<p>这种方式实现起来稍微复杂一些，好处是可以根据需要调整ToC的层次结构。当然，它也有局限性，例如，就我的实现而言，ToC的位置是固定浮动与整篇正文之上的，也就是说它会出现在文章的最开头处。</p>
+
+<h3 id="section-1">实现</h3>
+
+<p>闲话少叙，下面介绍实现过程。（这里应用的方法主要参照的是Brian Clapper的博客 <sup id="fnref:BrianClapper"><a href="#fn:BrianClapper" rel="footnote">2</a></sup> ）。</p>
+
+<!-- <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/m6Z3C/embedded/js,resources,html,css,result/light/"></iframe> &#8211;>
+<p><!--  --></p>
+
+<ul>
+  <li>
+    <p>jQuery插件支持</p>
+
+    <p>按照<a href="http://jquery.com/">jQuery</a>网站的提示配置你的系统，并且下载<a href="http://fuelyourcoding.com/scripts/toc/">Table of Contents jQuery Plugin</a>，将相应的JS文件放到<code>source/javascripts</code>目录。</p>
+
+    <p>在<code>source/_includes/custom/after_footer.html</code>中添加</p>
+  </li>
+</ul>
+
+<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+</pre></td><td class="code"><pre><code class="html"><span class="line">// !!! Load jQuery before this
+</span><span class="line"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span>
+</span><span class="line">    <span class="nx">jQuery</span><span class="p">.</span><span class="nx">noConflict</span><span class="p">();</span>
+</span><span class="line"><span class="nt">&lt;/script&gt;</span>
+</span><span class="line"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/javascripts/jquery.scrollTo.min.js&quot;</span> <span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</span><span class="line"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/javascripts/jquery.tableofcontents.min.js&quot;</span> <span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<ul>
+  <li>创建JavaScript文件，例如，<code>tocgenerator.js</code>，使其包含下面的代码，</li>
+</ul>
+
+<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+</pre></td><td class="code"><pre><code class="js"><span class="line"><span class="kd">function</span> <span class="nx">generateTOC</span><span class="p">(</span><span class="nx">insertBefore</span><span class="p">,</span> <span class="nx">heading</span><span class="p">,</span> <span class="nx">startLv</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="line">    <span class="kd">var</span> <span class="nx">container</span> <span class="o">=</span> <span class="nx">jQuery</span><span class="p">(</span><span class="s2">&quot;&lt;div id=&#39;tocBlock&#39;&gt;&lt;/div&gt;&quot;</span><span class="p">);</span>
+</span><span class="line">    <span class="kd">var</span> <span class="nx">div</span> <span class="o">=</span> <span class="nx">jQuery</span><span class="p">(</span><span class="s2">&quot;&lt;ul id=&#39;toc&#39;&gt;&lt;/ul&gt;&quot;</span><span class="p">);</span>
+</span><span class="line">    <span class="kd">var</span> <span class="nx">content</span> <span class="o">=</span> <span class="nx">jQuery</span><span class="p">(</span><span class="nx">insertBefore</span><span class="p">).</span><span class="nx">first</span><span class="p">();</span>
+</span><span class="line">
+</span><span class="line">    <span class="k">if</span> <span class="p">(</span><span class="nx">heading</span> <span class="o">!==</span> <span class="kc">undefined</span> <span class="o">&amp;&amp;</span> <span class="nx">heading</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="line">        <span class="nx">container</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;&lt;span class=&quot;tocHeading&quot;&gt;&#39;</span> <span class="o">+</span> <span class="nx">heading</span> <span class="o">+</span> <span class="s1">&#39;&lt;/span&gt;&#39;</span><span class="p">);</span>
+</span><span class="line">    <span class="p">}</span>
+</span><span class="line">
+</span><span class="line">    <span class="k">if</span> <span class="p">(</span><span class="nx">startLv</span> <span class="o">===</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span> <span class="nx">startLv</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="p">}</span>
+</span><span class="line">
+</span><span class="line">    <span class="nx">div</span><span class="p">.</span><span class="nx">tableOfContents</span><span class="p">(</span><span class="nx">content</span><span class="p">,</span> <span class="p">{</span> <span class="nx">startLevel</span><span class="o">:</span> <span class="nx">startLv</span> <span class="p">});</span>
+</span><span class="line">    <span class="nx">container</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">div</span><span class="p">);</span>
+</span><span class="line">    <span class="nx">container</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">insertBefore</span><span class="p">);</span>
+</span><span class="line"><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<ul>
+  <li>载入创建的JS文件（<code>source/_includes/custom/after_footer.html</code>）</li>
+</ul>
+
+<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="html"><span class="line"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/javascripts/tocgenerator.js&quot;</span> <span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<ul>
+  <li>创建ToC模块，依然在<code>source/_includes/custom/after_footer.html</code>中，添加，</li>
+</ul>
+
+<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+</pre></td><td class="code"><pre><code class="html"><span class="line">{% if page.toc == true %}
+</span><span class="line">  {% if page.tocstartlv %}
+</span><span class="line">    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span>
+</span><span class="line">    <span class="nx">jQuery</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span><span class="line">      <span class="c1">// Put a TOC right before the entry content.</span>
+</span><span class="line">      <span class="nx">generateTOC</span><span class="p">(</span><span class="s1">&#39;.entry-content&#39;</span><span class="p">,</span> <span class="s1">&#39;Contents&#39;</span><span class="p">,</span> <span class="p">{{</span> <span class="nx">page</span><span class="p">.</span><span class="nx">tocstartlv</span> <span class="p">}});</span>
+</span><span class="line">    <span class="p">});</span>
+</span><span class="line">    <span class="nt">&lt;/script&gt;</span>
+</span><span class="line">  {% else %}
+</span><span class="line">    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span>
+</span><span class="line">    <span class="nx">jQuery</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span><span class="line">      <span class="c1">// Put a TOC right before the entry content.</span>
+</span><span class="line">      <span class="nx">generateTOC</span><span class="p">(</span><span class="s1">&#39;.entry-content&#39;</span><span class="p">,</span> <span class="s1">&#39;Contents&#39;</span><span class="p">);</span>
+</span><span class="line">    <span class="p">});</span>
+</span><span class="line">    <span class="nt">&lt;/script&gt;</span>
+</span><span class="line">  {% endif %}
+</span><span class="line">{% endif %}
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<ul>
+  <li>
+    <p>插入ToC</p>
+
+    <p>与<a href="#kramdowntoc">方式一</a>不同，第二种方法插入ToC需要在文章的开始的Liquid标签出用两个新标签<code>toc</code>和<code>tocstartlv</code>来控制是否显示ToC以及ToC starting level。例如，本文采用了如下设定，</p>
+
+    <pre><code>  toc: true
+  tocstartlv: 2
+</code></pre>
+  </li>
+</ul>
+
+<h3 id="demo-1">Demo</h3>
+
+<p>生成的ToC出现在文章开始处，为区别于方式一，它采用了浅蓝色的背景。可以看到，由于起始的ToC level是2，它给出从<code>h2</code>到<code>h4</code>的所有目录项。另一方面，由kramdown产生的ToC由于设置的原因，仅能显示<code>h2</code>和<code>h3</code>这两层的目录项。</p>
+
+<h2 id="section-2">测试部分</h2>
+
+<h3 id="h3">H3</h3>
+
+<h4 id="h4">H4</h4>
+
+<h5 id="h5">H5</h5>
+<div class="footnotes">
+  <ol>
+    <li id="fn:kramdown">
+      <p><a href="http://kramdown.rubyforge.org/">kramdown主页</a><a href="#fnref:kramdown" rel="reference">&#8617;</a></p>
+    </li>
+    <li id="fn:BrianClapper">
+      <p><a href="http://brizzled.clapper.org/blog/2012/02/04/generating-a-table-of-contents-in-octopress/">Brian Clapper, Generating a Table of Contents in Octopress</a><a href="#fnref:BrianClapper" rel="reference">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Dazhi Jiang</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-05T07:49:00+08:00" pubdate data-updated="true">Dec 5<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/octopress/'>Octopress</a>, <a class='category' href='/blog/categories/programming/'>Programming</a>, <a class='category' href='/blog/categories/中文/'>中文</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left articlenav" href="/blog/2012/12/05/moving/" title="Previous Post: 搬家"><i class="icon-left-bold"></i>  搬家</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <!-- <h2>Comments</h2> -->
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h3>Recent Posts</h3>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/12/05/generating-toc-in-octopress/">给Blog添加Table of Contents</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/05/moving/">搬家</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/02/26/install-ruby-with-rvm/">Install Ruby with RVM</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/02/26/starting/">乱弹，学步</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2007/11/30/xiang-long-shi-ba-zhang/">降龙十八掌</a>
+      </li>
+    
+  </ul>
+</section>
+
+  
+</aside>
+
+
+	
+	<footer role="contentinfo" class="inner"><p>
+  Copyright &copy; 2012 - Dazhi Jiang |
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span> |
+  <span class="credit">Inspired by <a href="http://www.pizn.net">iLotus</a></span> |
+  <span class="credit">版权声明：<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/">CC BY-NC-SA 3.0</a></span>
+</p>
+
+</footer>
+	
+	
+
+<script type="text/javascript">
+      var disqus_shortname = 'Dazhi';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://Khaos.github.com/blog/2012/12/05/generating-toc-in-octopress/';
+        var disqus_url = 'http://Khaos.github.com/blog/2012/12/05/generating-toc-in-octopress/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+
+
+<script src="/javascripts/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+  jQuery.noConflict();
+  // Code that uses other library's $ can follow here.
+</script>
+<script src="/javascripts/jquery.scrollTo.min.js" type="text/javascript"></script>
+<script src="/javascripts/jquery.tableofcontents.min.js" type="text/javascript"></script>
+<script src="/javascripts/iFira.js" type="text/javascript"></script>
+
+
+  
+    
+      <script type="text/javascript">
+      jQuery(document).ready(function() {
+        // Put a TOC right before the entry content.
+        generateTOC('.entry-content', 'Contents', 2);
+      });
+      </script>
+    
+  
+
+
+
+</body>
+</html>

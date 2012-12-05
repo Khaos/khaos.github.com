@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Programming | Khaos]]></title>
-  <link href="http://Khaos.github.com/blog/categories/programming/atom.xml" rel="self"/>
+  <title><![CDATA[Category: 中文 | Khaos]]></title>
+  <link href="http://Khaos.github.com/blog/categories/%E4%B8%AD%E6%96%87/atom.xml" rel="self"/>
   <link href="http://Khaos.github.com/"/>
   <updated>2012-12-05T16:16:57+08:00</updated>
   <id>http://Khaos.github.com/</id>
@@ -216,6 +216,15 @@
   </entry>
   
   <entry>
+    <title type="html"><![CDATA[搬家]]></title>
+    <link href="http://Khaos.github.com/blog/2012/12/05/moving/"/>
+    <updated>2012-12-05T00:39:00+08:00</updated>
+    <id>http://Khaos.github.com/blog/2012/12/05/moving</id>
+    <content type="html"><![CDATA[<p>Blog闲置了许久，好一段不堪回首。重做了新Theme，加了一些plugin（<a href="../../../../../blog/experimental">测试页</a>），准备拾笔再写。先慢慢把Wordpress上的文章搬过来吧（半自动化的过程～）。</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Install Ruby with RVM]]></title>
     <link href="http://Khaos.github.com/blog/2012/02/26/install-ruby-with-rvm/"/>
     <updated>2012-02-26T09:33:00+08:00</updated>
@@ -310,6 +319,274 @@ $ sudo rm -rf /opt/local/bin/jekyll
   <li><a href="http://www.alessandrobaffa.it/2011/04/18/using-macports-to-install-ruby-1-9-x/">Using MacPorts To Install Ruby 1.9.x</a></li>
   <li><a href="http://www.ruby-forum.com/topic/178659#782331">Using MacPorts To Install Ruby 1.9.1 and Rails 2.3.0 RC1</a></li>
 </ul>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[乱弹，学步]]></title>
+    <link href="http://Khaos.github.com/blog/2012/02/26/starting/"/>
+    <updated>2012-02-26T09:25:00+08:00</updated>
+    <id>http://Khaos.github.com/blog/2012/02/26/starting</id>
+    <content type="html"><![CDATA[<p>万事开头难，一篇杂乱的开场白。</p>
+
+<p>本欲在开场中矫揉造作一番，可提起笔来却不知道写些什么。一通挣扎，不禁释然，还是顺其自然，随意写些东西吧，于是有了这个《<strong>乱弹</strong>》。</p>
+
+<!-- more -->
+
+<h2 id="section">缘起</h2>
+
+<p>这个Blog是关于什么的？嗯～，我不是科学界的一名大师（怪兽？），而是茫茫工程界一枚迷途小书童，一个三脚猫的业余码农，狂热的TeX/LaTeX爱好者，Google的粉丝，New Age音乐的聆听者，于是我想这里就应该是关于这些东西的吧，</p>
+
+<ul>
+  <li>TeX/LaTeX</li>
+  <li>Matlab</li>
+  <li>R</li>
+  <li>TikZ/pgf</li>
+  <li>Python</li>
+  <li>Ruby</li>
+  <li>Mac</li>
+  <li>其他的一些杂七杂八</li>
+</ul>
+
+<h2 id="section-1">初探</h2>
+
+<p>既然对建站一无所知，不如就从此入手吧，前面这几篇就说说如何用Jekyll建站吧。</p>
+
+<h3 id="section-2">纷至沓来的概念</h3>
+
+<ul>
+  <li><a href="http://liquidmarkup.org/">Liquid</a></li>
+  <li><a href="http://daringfireball.net/projects/markdown/">Markdown</a></li>
+  <li><a href="http://jekyllrb.com/">Jekyll</a></li>
+  <li><a href="http://octopress.org/">Octopress</a>, an exmple from <a href="http://lucifr.com/">Lucifr</a></li>
+  <li><a href="http://www.yaml.org/">YAML</a></li>
+  <li><a href="http://sass-lang.com/">Sass - Syntactically Awesome Stylesheets</a></li>
+  <li><a href="http://disqus.com/">DISQUS</a></li>
+</ul>
+
+<h3 id="section-3">网站</h3>
+
+<ul>
+  <li>Jekyll
+    <ul>
+      <li><a href="http://yihui.name/">谢益辉</a>, source  <a href="https://github.com/yihui/yihui.github.com">@github</a></li>
+      <li><a href="http://lhzhang.com/">setlmpl</a></li>
+      <li><a href="http://ztpala.com/">Tao</a></li>
+      <li><a href="http://www.ksornberger.com/">Kevin Sornberger</a> source <a href="https://github.com/ksornberger/ksornberger.github.com">@github</a></li>
+    </ul>
+  </li>
+  <li>Octopress
+    <ul>
+      <li><a href="http://lucifr.com/">Lucifr</a></li>
+      <li><a href="http://zespia.tw/">Zespia</a></li>
+      <li><a href="http://chenyufei.info/">Chen Yufei</a></li>
+      <li><a href="http://blog.xdite.net/">Blog.XDite.net</a></li>
+      <li><a href="http://alexzeitler.com/">Alex Zeitler</a></li>
+      <li><a href="http://zanshin.net/">Zanshin.net</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="section-4">参考文献</h3>
+
+<ul>
+  <li><a href="http://chenyufei.info/blog/2011-12-13/migrate-to-octopress/">博客转用 Octopress</a></li>
+  <li><a href="http://zespia.tw/blog/2012/01/14/hello-octopress/">Hello Octopress!</a></li>
+  <li><a href="http://www.alessandrobaffa.it/2011/04/18/using-macports-to-install-ruby-1-9-x/">Using MacPorts To Install Ruby 1.9.x</a></li>
+  <li><a href="http://www.ruby-forum.com/topic/178659#782331">Using MacPorts To Install Ruby 1.9.1 and Rails 2.3.0 RC1</a></li>
+</ul>
+
+<h3 id="section-5">工具</h3>
+
+<ul>
+  <li><a href="http://www.sublimetext.com/">Sublime Text 2</a>, replacement of <a href="http://macromates.com/">TextMate</a> (BBEdit? no)</li>
+</ul>
+
+<h3 id="section-6">目标</h3>
+
+<ul>
+  <li>Blogging with comments</li>
+  <li>Blogging with codes</li>
+  <li>Blogging with graph</li>
+  <li>Blogging with equations</li>
+  <li>Blogging with LaTeX</li>
+</ul>
+
+<h3 id="section-7">技术</h3>
+
+<ul>
+  <li>模版</li>
+  <li>插图</li>
+  <li>字体</li>
+  <li>代码，利用<a href="http://pygments.org/">Pygments</a></li>
+  <li>公式</li>
+</ul>
+
+<h2 id="step-by-step-tutorial">预告，Step by step tutorial</h2>
+
+<ul>
+  <li><del>Jekyll</del></li>
+  <li><del>Jekyll Bootstrape</del></li>
+  <li><del>Markdown</del></li>
+  <li>
+    <p><del>Sublime Text 2</del></p>
+  </li>
+  <li>Octopress</li>
+  <li>Theme</li>
+  <li>Markdown</li>
+  <li>TextMate 2</li>
+</ul>
+
+<h2 id="blog">Blog列表</h2>
+
+<ul class="posts">
+  
+    <li><span>05 Dec 2012</span> &raquo; <a href="/blog/2012/12/05/generating-toc-in-octopress/">给Blog添加Table of Contents</a></li>
+  
+    <li><span>05 Dec 2012</span> &raquo; <a href="/blog/2012/12/05/moving/">搬家</a></li>
+  
+    <li><span>26 Feb 2012</span> &raquo; <a href="/blog/2012/02/26/install-ruby-with-rvm/">Install Ruby with RVM</a></li>
+  
+    <li><span>26 Feb 2012</span> &raquo; <a href="/blog/2012/02/26/starting/">乱弹，学步</a></li>
+  
+    <li><span>30 Nov 2007</span> &raquo; <a href="/blog/2007/11/30/xiang-long-shi-ba-zhang/">降龙十八掌</a></li>
+  
+</ul>
+
+<p><del>其他</del></p>
+
+<!-- Read [Jekyll Quick Start](http://jekyllbootstrap.com/usage/jekyll-quick-start.html) -->
+
+<!-- Complete usage and documentation available at: [Jekyll Bootstrap](http://jekyllbootstrap.com) -->
+<!-- 
+## Update Author Attributes
+
+In `_config.yml` remember to specify your own data:
+    
+    title : My Blog =)
+    
+    author :
+      name : Name Lastname
+      email : blah@email.test
+      github : username
+      twitter : username
+
+The theme should reference these variables whenever needed.
+    
+## Sample Posts
+
+This blog contains sample posts which help stage pages and blog data.
+When you don't need the samples anymore just delete the `_posts/core-samples` folder.
+
+    $ rm -rf _posts/core-samples
+
+Here's a sample "posts list".
+ -->
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[降龙十八掌]]></title>
+    <link href="http://Khaos.github.com/blog/2007/11/30/xiang-long-shi-ba-zhang/"/>
+    <updated>2007-11-30T19:01:00+08:00</updated>
+    <id>http://Khaos.github.com/blog/2007/11/30/xiang-long-shi-ba-zhang</id>
+    <content type="html"><![CDATA[<p class="fn-img"><img src="../../../../../images/blog/2007/kongfucat.jpeg" alt="降龙十八掌" /></p>
+
+<!-- more -->
+
+<ul>
+  <li>
+    <p>第一式（起手式）见龙在田：</p>
+
+    <p>出自坤卦，辞曰：“见龙在田，大贞”就是说看见龙在田中会有好事发生。这一招掌力霸道异常，为降龙十八掌最强的一招，取名见龙在田，既是说一掌打去，敌人完蛋大吉。 </p>
+  </li>
+  <li>
+    <p>第二式 飞龙在天：</p>
+
+    <p>降龙十八掌中的一招，同样源于周易。辞曰：“飞龙在天，利见大人”，飞龙即翱翔在天空的龙，飞龙在天，看尽世事，所以能发现大人（有道德的人）。这一招由上势下，借惯性伤人，正如飞龙借有德者而扬名，威力奇大。</p>
+  </li>
+  <li>
+    <p>第三式 鸿渐于陆：</p>
+
+    <p>出于渐卦，渐指妇女，辞曰：“鸿渐于陆，其羽可用为仪”大雁降到平地上，他的羽毛可以被妇女用来装饰。此招之用，在一个巧字，藏巧于拙，用羽为仪。 </p>
+  </li>
+  <li>
+    <p>第四式 龙跃在渊：</p>
+
+    <p>降龙十八掌中的一招，同样源于周易“龙跃于渊”</p>
+  </li>
+  <li>
+    <p>第五式 羝羊触蕃：</p>
+
+    <p>出自大壮卦，辞曰：“羝羊触藩，赢其角”两只羊角力，赢的用的是它的角。这招用途是说要用有力点来伤敌。但“羝羊触藩，不能退，不能邃。”运用不当相信会反受其害。 </p>
+  </li>
+  <li>
+    <p>第六式 潜龙勿用：</p>
+
+    <p>源于坤卦，辞曰：“潜龙勿用”，龙潜于渊，其志难测，所以不可用。此招劲收于内凝而不发，但若有敢试其锋芒者，必受其殃。 </p>
+  </li>
+  <li>
+    <p>第七式 利涉大川：</p>
+
+    <p>源于同仁卦，同人既是同志，辞曰：“同人于野，亨，利涉大川，利君子贞”有好朋友聚集起来，畅通无阻，所以去危险的地方也变得安全了。此招表面平平无期，实质上力聚于掌，正如好友的聚集，难凝而易散。如中此招，必定全身筋脉尽碎，死的苦不堪言！ </p>
+  </li>
+  <li>
+    <p>第八式 神龙摆尾：</p>
+
+    <p>本名履虎尾，出入履卦，履既踏，辞曰：“眇能视，跛能履，履护尾，咀人”意思是说人瞎了一只眼睛还能看见东西，瘸了一条腿还能走路，但是如果不小踏上了老虎的尾巴，就会被它吃掉。这招专攻背后之人，劲道奇猛，实为降龙十八掌的救命绝招。 </p>
+  </li>
+  <li>
+    <p>第九式 密云不雨：</p>
+
+    <p>出自乾卦，辞曰：“密云不雨，时或有风”雨云很多了但不下雨，那是由于在等待着刮风。此招不在于密云不雨，密云不雨只是力量的积累，而真正的杀手却在时或有风上，风声（时机）一起，敌人便万劫难逃了。 </p>
+  </li>
+  <li>
+    <p>第十式 突如其来：</p>
+
+    <p>功如其名,去势奇快,攻其不备,最易出奇制胜.在对手未反应之前,便给予敌人致命一击. </p>
+  </li>
+  <li>
+    <p>第十一式 双龙取水：</p>
+
+    <p>攻势一分为二,看似平常一招,功力与身法倍增二倍有余,有点类似于周伯通自创的双手互搏,但与其比较有过之无不及 </p>
+  </li>
+  <li>
+    <p>第十二式 鱼跃于渊：</p>
+
+    <p>平凡的一跃,尤如龙腾九霄,有着强大的爆发力. </p>
+  </li>
+  <li>
+    <p>第十三式 震惊百里：</p>
+
+    <p>出于震卦，震就是雷，辞曰：“震惊百里，不丧匕鬯（鬯：一种酒）”本来是说一个人虽然被吓了一跳但连酒也没撒掉，但光从名字来理解的话就是说雷电莫大的威力了。这一招生势浩大,震惊百里 </p>
+  </li>
+  <li>
+    <p>第十四式 损则有孚：</p>
+
+    <p>出自损卦，损就是不利的方面，和益卦相反。辞曰：“损，有孚”孚就是信用，辞曰：“自上至下谓之损”本句是说虽然守了信用但却没办成好事。此招出招和飞龙在天相似，自上而下，然损却接益，辞曰：“自下至上谓之益”，变招犹如异军突起，让人防不胜防。 </p>
+  </li>
+  <li>
+    <p>第十五式 时乘六龙：</p>
+
+    <p>出自乾卦，辞曰：“时乘六龙以御天”自古传说五岳为中华灵气之所在，每岳各有神龙镇守，加以姬黄帝（就是轩辕黄帝）之应龙，是为六龙。六龙齐出，王道浩然，其势之大，盖地铺天，为降龙十八掌最有王道正气的一招。 </p>
+  </li>
+  <li>
+    <p>第十六式 龙战于野：</p>
+
+    <p>取意于周易中的坤卦，坤者为地，辞曰：“龙战于野，其血玄黄”，野在这里作为平地讲，玄指黑色，其血玄黄是说血改变了应有的颜色。按古代的思想，龙上在于天，中潜于渊，下见于田。“龙战于野，其道穷也”指的就是龙处在了不该处于的位置，他的力量同时也被激发了出来，出这招一般在于危难之时的奋力一博，正因为没有退路，所以此招才无所不辟！ </p>
+  </li>
+  <li>
+    <p>第十七式 履霜冰至：</p>
+
+    <p>出自坤卦，辞曰：“履霜，坚冰至”踩到了霜，就应该想到大冰雪要来了。这招招如其名，初时似柔弱无力，但如敌人胆敢进招，就如暴雪突降，后劲无穷。</p>
+  </li>
+  <li>
+    <p>第十八式 亢龙有悔：</p>
+
+    <p>降龙十八掌中最常使用的一招，取意于周易中的乾卦，乾代表天，辞曰：“亢龙，有悔”是说亢龙（飞向尽头的龙）虽然当世无敌，但力终有尽时，力尽则悔，悔不可及。亢龙有悔，盈不可久，此招重悔不重亢，后尽无穷。</p>
+  </li>
+</ul>
+
 ]]></content>
   </entry>
   
