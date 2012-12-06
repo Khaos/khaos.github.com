@@ -4,7 +4,7 @@
   <title><![CDATA[Category: TikZ | Khaos]]></title>
   <link href="http://Khaos.github.com/blog/categories/tikz/atom.xml" rel="self"/>
   <link href="http://Khaos.github.com/"/>
-  <updated>2012-12-06T13:35:58+08:00</updated>
+  <updated>2012-12-06T16:19:11+08:00</updated>
   <id>http://Khaos.github.com/</id>
   <author>
     <name><![CDATA[Dazhi Jiang]]></name>
@@ -346,7 +346,7 @@
 
 <p>Here is he thumbnail of the plot. You can find the <a href="http://cid-e5b806d2c8679f5d.skydrive.live.com/self.aspx/Public/TeX/bodeplot.tex">tex</a> and <a href="http://cid-e5b806d2c8679f5d.skydrive.live.com/self.aspx/Public/TeX/bodeplot.pdf">pdf</a> file from my SkyDrive.</p>
 
-<p class="fn-img"><img src="https://raw.github.com/Khaos/TikZGallery/master/Figs/png/pgf-o-Bodeplot.png" alt="降龙十八掌" /></p>
+<p class="fn-img" style="max-width: 450px;"><img src="https://raw.github.com/Khaos/TikZGallery/master/Figs/png/pgf-o-Bodeplot.png" alt="The bodeplots of two control systems" /></p>
 
 <p class="info">Update: <br />
     The code has been included in the PGF/Ti<em>k</em>Z gallery, <a href="http://www.texample.net/">TeXample.net</a>, see <a href="http://www.texample.net/tikz/examples/bode-plot/">here</a>.</p>
