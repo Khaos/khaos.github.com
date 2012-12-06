@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 中文 | Khaos]]></title>
   <link href="http://Khaos.github.com/blog/categories/zhong-wen/atom.xml" rel="self"/>
   <link href="http://Khaos.github.com/"/>
-  <updated>2012-12-06T09:26:59+08:00</updated>
+  <updated>2012-12-06T09:35:31+08:00</updated>
   <id>http://Khaos.github.com/</id>
   <author>
     <name><![CDATA[Dazhi Jiang]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Octopress易筋经，中文分类标签支持]]></title>
+    <title type="html"><![CDATA[Octopress易筋经，中文分类标签]]></title>
     <link href="http://Khaos.github.com/blog/2012/12/06/using-chinese-category-tags-in-octopress/"/>
     <updated>2012-12-06T01:54:00+08:00</updated>
     <id>http://Khaos.github.com/blog/2012/12/06/using-chinese-category-tags-in-octopress</id>
@@ -490,7 +490,7 @@ $ sudo rm -rf /opt/local/bin/jekyll
 
 <ul class="posts">
   
-    <li><span>06 Dec 2012</span> &raquo; <a href="/blog/2012/12/06/using-chinese-category-tags-in-octopress/">Octopress易筋经，中文分类标签支持</a></li>
+    <li><span>06 Dec 2012</span> &raquo; <a href="/blog/2012/12/06/using-chinese-category-tags-in-octopress/">Octopress易筋经，中文分类标签</a></li>
   
     <li><span>05 Dec 2012</span> &raquo; <a href="/blog/2012/12/05/generating-toc-in-octopress/">Octopress易筋经，目录表ToC</a></li>
   
