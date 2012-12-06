@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Install Ruby with RVM - Khaos</title>
+  <title>Octopress易筋经，中文分类标签支持 - Khaos</title>
   <meta name="author" content="Dazhi Jiang">
 
   
-  <meta name="description" content="自打从Yihui Xie那里听说了Jekyll，并照着Jekyll Bootstrap折腾了一番，便喜欢上了这个静态网站构建系统。不久从Lucifr看到Octopress这个变身版的Jekyll，于是就更加要齐齐苦苦了。Octopress依赖于Ruby 1.9.2+，所以这里介绍一下如何用Ruby &hellip;">
+  <meta name="description" content="本文讨论如何在Octopress中使用中文分类标签。 基于Octopress的博客系统自带了一个很好用分类标签插件。但遗憾的是它不支持中文，如果你在文章中定义了中文分类，那么点击的时候会链接到404页面。事实上，这个分类功能是通过plugins/category_generator.rb来实现， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://Khaos.github.com/blog/2012/02/26/install-ruby-with-rvm/">
+  <link rel="canonical" href="http://Khaos.github.com/blog/2012/12/06/using-chinese-category-tags-in-octopress/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -117,7 +117,7 @@
   
   <header>
     
-      <h1 class="fira-pagetit">Install Ruby With RVM</h1>
+      <h1 class="fira-pagetit">Octopress易筋经，中文分类标签支持</h1>
     
     
       <p class="meta">
@@ -133,7 +133,7 @@
   
 
 
-<time datetime="2012-02-26T09:33:00+08:00" pubdate data-updated="true">Feb 26<span>th</span>, 2012</time>
+<time datetime="2012-12-06T01:54:00+08:00" pubdate data-updated="true">Dec 6<span>th</span>, 2012</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -142,96 +142,47 @@
   </header>
 
 
-<div class="entry-content"><p>自打从<a href="http://yihui.name/">Yihui Xie</a>那里听说了<a href="http://jekyllrb.com/">Jekyll</a>，并照着<a href="http://jekyllbootstrap.com/">Jekyll Bootstrap</a>折腾了一番，便喜欢上了这个静态网站构建系统。不久从<a href="http://lucifr.com/">Lucifr</a>看到<a href="http://octopress.org/">Octopress</a>这个变身版的Jekyll，于是就更加要齐齐苦苦了。Octopress依赖于Ruby 1.9.2+，所以这里介绍一下如何用<a href="https://rvm.beginrescueend.com/">Ruby Version Manager (RVM)</a>。</p>
+<div class="entry-content"><p class="info">本文讨论如何在Octopress中使用中文分类标签。</p>
 
 <!-- more -->
 
-<h2 id="uninstall-all-ruby-related-macports-ports">Uninstall all ruby-related MacPorts’ ports</h2>
+<p>基于Octopress的博客系统自带了一个很好用分类标签插件。但遗憾的是它不支持中文，如果你在文章中定义了中文分类，那么点击的时候会链接到404页面。事实上，这个分类功能是通过<code>plugins/category_generator.rb</code>来实现，所以有好事者对其进行了hack，以提供中文分类的支持。例如，</p>
 
-<p>由于我的Ruby是用MacPorts安装的，所以首先需要把这个版本的Ruby卸载掉。</p>
+<ol>
+  <li>在<a href="http://geron.heroku.com/blog/2012/03/octo-cate-cn-spo/">这篇文章</a>中，作者修改了<code>category_generator.rb</code>文件中<code>write_category_indexes</code>函数，原理就是将<code>category_dir</code>下的目录名做成汉字在 url 中的编码 (RFC1738)，然后和中文分类标签链接起来。测试了一下，这种方式在本地预览的时候没有问题，但是push到GitHub上就无法解析中文地址。</li>
+  <li>另外一种方法（参见<a href="http://blog.sprabbit.com/blog/2012/03/23/octopress/">这里</a>），也是修改了<code>category_generator.rb</code>。与上面不同的是，它重新定义了分类标签在文章中的定义格式。例如，用<code>中文分类标签名{英文别名}</code>这样的格式来定义标签。于是在文章显示是中文分类，但实际链接到英文别名上。这种方法虽然定义标签麻烦些，但可定制性强。实际应用中却有问题，修改后的系统可以正常generate&amp;deploy，但是preview那里有问题，无法自动跟踪文章的改变。这实际上很让人抓狂，因为不能实时的预览文档。也许以后的文章里会进行详细的研究。</li>
+</ol>
 
-<h3 id="ports">卸载相关Ports</h3>
+<p>我的解决方案当然也逃脱不了hack <code>category_generator.rb</code>的套路，但是思路上简单多了，就是利用<a href="https://github.com/rsl/stringex">stringex</a>包的<code>to_url</code>函数将中文分类标签的链接名和<code>category_dir</code>下的目录名都转换成相应的拼音。这样无论在本地还是GitHub上都没有问题。事实上，Octopress系统在利用<code>rake new_[post|page]</code>命令创建含有中文名的文章时也采用了这样的技巧，你可以查看Rakefile中相关的部分。</p>
 
-<pre><code>$ sudo port uninstall rb19-*
-$ sudo port clean rb19-*
-$ sudo port uninstall ruby19
-$ sudo port clean ruby19
-$ sudo port uninstall rb-*
-$ sudo port clean rb-*
-$ sudo port uninstall ruby
-$ sudo port clean ruby
+<p>下面是实现步骤，在<code>category_generator.rb</code>文件头处添加</p>
+
+<pre><code>require "stringex"
 </code></pre>
 
-<h3 id="gems">移除Gems</h3>
+<p>然后找到其中定义category目录的部分</p>
 
-<pre><code>$ sudo rm -rf /opt/local/lib/ruby
-$ sudo rm -rf /opt/local/lib/ruby19
-$ sudo rm -rf /opt/local/bin/rdiscount
-$ sudo rm -rf /opt/local/bin/jekyll
+<pre><code>self.write_category_index(File.join(dir, category.gsub(/_|\P{Word}/, '-').gsub(/-{2,}/, '-').downcase), category)
 </code></pre>
 
-<h2 id="install-rvm">Install RVM</h2>
+<p>将其修改为</p>
 
-<p>打开Terminal，确定处于当前用户目录下 (~)，运行如下命令</p>
-
-<pre><code>$ bash -s stable &lt; &lt;(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer )
+<pre><code>self.write_category_index(File.join(dir, category.gsub(/_|\P{Word}/, '-').gsub(/-{2,}/, '-').to_url.downcase), category)
 </code></pre>
 
-<p>在所有打开的Terminal中运行</p>
+<p>再找到定义中文分类网页标签的部分</p>
 
-<pre><code>$ source /Users/Khaos/.rvm/scripts/rvm
+<pre><code>"&lt;a class='category' href='/#{dir}/#{item.gsub(/_|\P{Word}/, '-').gsub(/-{2,}/, '-').downcase}/'&gt;#{item}&lt;/a&gt;"
 </code></pre>
 
-<p>可以用如下命令查看是否RVM已经安装配置成功</p>
+<p>改为</p>
 
-<pre><code>$ type rvm | head -1
+<pre><code>"&lt;a class='category' href='/#{dir}/#{item.gsub(/_|\P{Word}/, '-').gsub(/-{2,}/, '-').to_url.downcase}/'&gt;#{item}&lt;/a&gt;"
 </code></pre>
 
-<p>如果返回<code>rvm is a function</code>，就说明成功了。</p>
+<p>注意上面两处修改就是再相应的地方加上<code>to_url</code>函数进行地址的转换。</p>
 
-<p>查看RMV requirements</p>
-
-<pre><code>$ rvm requriements
-</code></pre>
-
-<p>在我的Mac上提示需要libksba，可以通过MacPorts安装</p>
-
-<pre><code>$ sudo port install libksba
-</code></pre>
-
-<p>利用RVM安装Ruby (e.g., 1.9.3)</p>
-
-<pre><code>$ rvm install 1.9.3
-</code></pre>
-
-<h2 id="use-newly-installed-ruby">Use newly installed Ruby</h2>
-
-<pre><code>$ rvm use 1.9.2
-</code></pre>
-
-<p>check ruby version
-    $ ruby -v
-    $ which ruby</p>
-
-<h2 id="problems">Problems</h2>
-
-<ul>
-  <li>
-    <p>ArgumentError: invalid byte sequence in US-ASCII</p>
-
-    <p>See <a href="https://github.com/rails/jquery-rails/pull/35">https://github.com/rails/jquery-rails/pull/35</a></p>
-  </li>
-</ul>
-
-<h2 id="references">References</h2>
-
-<ul>
-  <li><a href="https://rvm.beginrescueend.com/">RVM official site</a></li>
-  <li><a href="https://rvm.beginrescueend.com/rvm/install/">Installing RVM</a></li>
-  <li><a href="http://stackoverflow.com/questions/3464285/ruby-on-mac-osx-via-mac-ports">Ruby on Mac OSX via Mac Ports</a></li>
-  <li><a href="http://www.alessandrobaffa.it/2011/04/18/using-macports-to-install-ruby-1-9-x/">Using MacPorts To Install Ruby 1.9.x</a></li>
-  <li><a href="http://www.ruby-forum.com/topic/178659#782331">Using MacPorts To Install Ruby 1.9.1 and Rails 2.3.0 RC1</a></li>
-</ul>
+<p>修改后重新generate和deploy/preview，就可以看到中文分类了，而实际的链接就是对应的拼音。你可以用这个blog来测试中文分类功能。</p>
 </div>
 
 
@@ -254,12 +205,12 @@ $ sudo rm -rf /opt/local/bin/jekyll
   
 
 
-<time datetime="2012-02-26T09:33:00+08:00" pubdate data-updated="true">Feb 26<span>th</span>, 2012</time>
+<time datetime="2012-12-06T01:54:00+08:00" pubdate data-updated="true">Dec 6<span>th</span>, 2012</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/programming/'>Programming</a>, <a class='category' href='/blog/categories/zhong-wen/'>中文</a>
+    <a class='category' href='/blog/categories/octopress/'>Octopress</a>, <a class='category' href='/blog/categories/zhong-wen/'>中文</a>, <a class='category' href='/blog/categories/yi-jin-jing/'>易筋经</a>
   
 </span>
 
@@ -277,10 +228,8 @@ $ sudo rm -rf /opt/local/bin/jekyll
     
     <p class="meta">
       
-        <a class="basic-alignment left articlenav" href="/blog/2012/02/26/starting/" title="Previous Post: 乱弹，学步"><i class="icon-left-bold"></i>  乱弹，学步</a>
+        <a class="basic-alignment left articlenav" href="/blog/2012/12/05/generating-toc-in-octopress/" title="Previous Post: Octopress易筋经，目录表ToC"><i class="icon-left-bold"></i>  Octopress易筋经，目录表ToC</a>
       
-      
-        <a class="basic-alignment right articlenav" href="/blog/2012/12/05/moving/" title="Next Post: 搬家">搬家  <i class="icon-right-bold"></i></a>
       
     </p>
   </footer>
@@ -344,8 +293,8 @@ $ sudo rm -rf /opt/local/bin/jekyll
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://Khaos.github.com/blog/2012/02/26/install-ruby-with-rvm/';
-        var disqus_url = 'http://Khaos.github.com/blog/2012/02/26/install-ruby-with-rvm/';
+        var disqus_identifier = 'http://Khaos.github.com/blog/2012/12/06/using-chinese-category-tags-in-octopress/';
+        var disqus_url = 'http://Khaos.github.com/blog/2012/12/06/using-chinese-category-tags-in-octopress/';
         var disqus_script = 'embed.js';
       
     (function () {
