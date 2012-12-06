@@ -4,7 +4,7 @@
   <title><![CDATA[Khaos]]></title>
   <link href="http://Khaos.github.com/atom.xml" rel="self"/>
   <link href="http://Khaos.github.com/"/>
-  <updated>2012-12-06T09:38:49+08:00</updated>
+  <updated>2012-12-06T10:14:34+08:00</updated>
   <id>http://Khaos.github.com/</id>
   <author>
     <name><![CDATA[Dazhi Jiang]]></name>
@@ -510,6 +510,8 @@ $ sudo rm -rf /opt/local/bin/jekyll
   
     <li><span>26 Feb 2012</span> &raquo; <a href="http://Khaos.github.com/blog/2012/02/26/starting/">乱弹，学步</a></li>
   
+    <li><span>18 Jun 2008</span> &raquo; <a href="http://Khaos.github.com/blog/2008/06/18/trying-lyx/">形而上者谓之道，形而下者谓之器 —— LyX学习小记</a></li>
+  
     <li><span>30 Nov 2007</span> &raquo; <a href="http://Khaos.github.com/blog/2007/11/30/xiang-long-shi-ba-zhang/">降龙十八掌</a></li>
   
 </ul>
@@ -543,6 +545,19 @@ When you don't need the samples anymore just delete the `_posts/core-samples` fo
 
 Here's a sample "posts list".
  -->
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[形而上者谓之道，形而下者谓之器 —— LyX学习小记]]></title>
+    <link href="http://Khaos.github.com/blog/2008/06/18/trying-lyx/"/>
+    <updated>2008-06-18T00:00:00+08:00</updated>
+    <id>http://Khaos.github.com/blog/2008/06/18/trying-lyx</id>
+    <content type="html"><![CDATA[<p class="warning">08年的文章（格式还保持WP原样），后面坑有点大，我不打算填了。因为虽然也用LyX，但是写较大的文档我还是习惯用LaTeX（主要是我要用Makefile来控制整个编译过程），也许以后会有LyX的一些介绍。</p>
+
+<!-- more -->
+
+<p><div id="msgcns!E5B806D2C8679F5D!154" class="bvMsg"><p>  </p><p>|&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211; <font color="#ff8000">看什么看，没见过分隔符?</font> &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;|  </p><h5>小引1</h5> <p>形而上者谓之道，形而下者谓之器。 —— 《易经 · 系辞》  </p><p>|&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211; <font color="#ff8000">看什么看，没见过分隔符?</font> &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;|  </p><h5>小引2</h5> <table cellspacing="0" cellpadding="2" width="478" border="0"> <tbody> <tr> <td valign="top" width="79">TeX/LaTeX  </td><td valign="top" width="41">&#8212;&gt;  </td><td valign="top" width="356">WYSIWYAF (what you see is what you asked for)  </td></tr><tr> <td valign="top" width="79">LyX  </td><td valign="top" width="42">&#8212;&gt;  </td><td valign="top" width="356">WYSIWYM (what you see is what you mean)  </td></tr><tr> <td valign="top" width="79">Word  </td><td valign="top" width="43">&#8212;&gt;  </td><td valign="top" width="356">WYSIWYG (what you see is what you get)</td></tr></tbody></table> <p>|&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211; <font color="#ff8000">看什么看，没见过分隔符?</font> &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;|  </p><h5>小引3</h5> <p>接触LyX一周有余，颇有所得，这里小记一下。  </p><p>（此篇归入《易筋经》）  </p><p>|&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211; <font color="#ff8000">看什么看，没见过分隔符?</font> &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;|  </p><p>说到LyX，不得不先说说TeX/LaTeX和Word。我于97年接触Microsoft Word，2000年用它写了第一篇毕业论文。记得当时只是插入了十几张图和几十个公式，在586的机器上真是把我折磨的欲仙欲死。于是从Word XP开始奋发图强，学习宏命令，学做交叉引用、目录和动画，等等。至2003年前后，各种18般武器都在Word上面试了个遍，自感脱离noob之列，不仅飘飘然起来。可惜好景不长，2004年底，有幸读到了侯捷先生的《Word排版艺术》一书，才知道于Word我只略通皮毛，而于精华只是初窥门径。虽然不免灰心丧气，但也看到Word之笨拙，有时甚至不近人情，不食人间烟火的倔强之处。于是，我决定，摒弃Word，皈依TeX/LaTeX。  </p><p>对于TeX，并非一见钟情。我在2000年就耳闻TeX/LaTeX，但是一直没有兴趣研究，一个是那个时候TeX/LaTeX的中文支持不好，而其时我也从不写英文论文，再一个它的门槛较高，没有目标的学习如同嚼蜡。注定要与TeX/LaTeX结缘，2006年我需要写一篇图、文、式（公式）并茂的英文论文。想起用Word时抓狂的样子，终于下决心这回用TeX/LaTeX来写！于是找来CTeX（一个中文TeX<del>宏包</del>系统，初学者的上选，可以到<a href="http://www.ctex.org">这里</a>下载）安装包，借来参考书，似模似样的写起来。一个月下来，竟然不知不觉“轻舟已过万重山”，一份70来页的文档跃然纸上。麻雀虽小，却也包含了Graph, Table, Equation, Algorithm, Theorem，以及Content, Reference, Cross-reference和Bookmark，等等。至此，不仅于LaTeX相见恨晚，似乎并没有想象中的那么难学。于是两年来，PC上再也没有出现过超过10页的Word文档。几篇文档写下来，手法日臻纯熟，于TeX确越发敬畏起来，实感其之博大精深，回想Word，现在只能称之为“字处理软件”，而非“排版软件”，在TeX面前，似乎有些小巫见大巫。慢慢的，迷恋于TeX不能自拔，用它写Report，写Memorandum，写Presentation，甚至在LaTeX中做pdf动画。  </p><p>（未完&#8230;）</p></div></p>
 ]]></content>
   </entry>
   

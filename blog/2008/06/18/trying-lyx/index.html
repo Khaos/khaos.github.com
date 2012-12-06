@@ -1,0 +1,304 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>形而上者谓之道，形而下者谓之器 —— LyX学习小记 - Khaos</title>
+  <meta name="author" content="Dazhi Jiang">
+
+  
+  <meta name="description" content="08年的文章（格式还保持WP原样），后面坑有点大，我不打算填了。因为虽然也用LyX，但是写较大的文档我还是习惯用LaTeX（主要是我要用Makefile来控制整个编译过程），也许以后会有LyX的一些介绍。   |&#8212;&#8212;&#8212;&#8212;&#8212;&#8212 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://Khaos.github.com/blog/2008/06/18/trying-lyx/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Khaos" type="application/atom+xml">
+  <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+<!-- mathjax config similar to math.stackexchange -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    messageStyle: "none",
+    "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+  });
+  MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<!-- DISQUS JavaScript configuration variables -->
+<script type="text/javascript">
+    var disqus_developer = 1; // developer mode is on
+</script>
+  
+
+</head>
+
+
+<body itemscope itemtype="http://schema.org/WebPage"    class="collapse-sidebar sidebar-footer fira" >
+	<div class="fira-nav">
+	  <nav role="navigation"><ul class="main-navigation">
+	
+	<li class="home">
+		<a href="/" rel="nofollow" title="Home">
+			<i class="icon-home"></i>
+		</a>
+	</li>
+	
+	
+	<li>
+		<a href="/blog/archives" rel="bookmark" title="Archives">
+			<i class="icon-archive"></i>
+		</a>
+	</li>
+	
+	
+	<li>
+		<a href="/blog/contact" rel="bookmark" title="About me">
+			<i class="icon-mail"></i>
+		</a>
+	</li>
+	
+	
+	<li>
+		<a href="http://weibo.com/djkhaos" target="_blank" rel="nofollow" title="我的微博">
+			<i class="icon-sina-weibo"></i>
+		</a>
+	</li>
+	
+	
+	<li>
+		<a href="https://github.com/Khaos" target="_blank" rel="nofollow" title="My GitHub">
+			<i class="icon-github"></i>
+		</a>
+	</li>
+	
+	<li>
+		<a href="/atom.xml" rel="nofollow" target="_blank" title="Click to subscribe">
+			<i class="icon-rss"></i>
+		</a>
+	</li>
+</ul>
+</nav>
+	</div>
+	
+	<section class="fira-header-bar">
+		
+	</section>
+	
+	
+	<div>
+<article class="fira-article" role="article">
+  
+  <header>
+    
+      <h1 class="fira-pagetit">形而上者谓之道，形而下者谓之器 —— LyX学习小记</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-06-18T00:00:00+08:00" pubdate data-updated="true">Jun 18<span>th</span>, 2008</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p class="warning">08年的文章（格式还保持WP原样），后面坑有点大，我不打算填了。因为虽然也用LyX，但是写较大的文档我还是习惯用LaTeX（主要是我要用Makefile来控制整个编译过程），也许以后会有LyX的一些介绍。</p>
+
+<!-- more -->
+
+<p><div id="msgcns!E5B806D2C8679F5D!154" class="bvMsg"><p>  </p><p>|&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211; <font color="#ff8000">看什么看，没见过分隔符?</font> &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;|  </p><h5>小引1</h5> <p>形而上者谓之道，形而下者谓之器。 —— 《易经 · 系辞》  </p><p>|&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211; <font color="#ff8000">看什么看，没见过分隔符?</font> &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;|  </p><h5>小引2</h5> <table cellspacing="0" cellpadding="2" width="478" border="0"> <tbody> <tr> <td valign="top" width="79">TeX/LaTeX  </td><td valign="top" width="41">&#8212;&gt;  </td><td valign="top" width="356">WYSIWYAF (what you see is what you asked for)  </td></tr><tr> <td valign="top" width="79">LyX  </td><td valign="top" width="42">&#8212;&gt;  </td><td valign="top" width="356">WYSIWYM (what you see is what you mean)  </td></tr><tr> <td valign="top" width="79">Word  </td><td valign="top" width="43">&#8212;&gt;  </td><td valign="top" width="356">WYSIWYG (what you see is what you get)</td></tr></tbody></table> <p>|&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211; <font color="#ff8000">看什么看，没见过分隔符?</font> &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;|  </p><h5>小引3</h5> <p>接触LyX一周有余，颇有所得，这里小记一下。  </p><p>（此篇归入《易筋经》）  </p><p>|&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211; <font color="#ff8000">看什么看，没见过分隔符?</font> &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;|  </p><p>说到LyX，不得不先说说TeX/LaTeX和Word。我于97年接触Microsoft Word，2000年用它写了第一篇毕业论文。记得当时只是插入了十几张图和几十个公式，在586的机器上真是把我折磨的欲仙欲死。于是从Word XP开始奋发图强，学习宏命令，学做交叉引用、目录和动画，等等。至2003年前后，各种18般武器都在Word上面试了个遍，自感脱离noob之列，不仅飘飘然起来。可惜好景不长，2004年底，有幸读到了侯捷先生的《Word排版艺术》一书，才知道于Word我只略通皮毛，而于精华只是初窥门径。虽然不免灰心丧气，但也看到Word之笨拙，有时甚至不近人情，不食人间烟火的倔强之处。于是，我决定，摒弃Word，皈依TeX/LaTeX。  </p><p>对于TeX，并非一见钟情。我在2000年就耳闻TeX/LaTeX，但是一直没有兴趣研究，一个是那个时候TeX/LaTeX的中文支持不好，而其时我也从不写英文论文，再一个它的门槛较高，没有目标的学习如同嚼蜡。注定要与TeX/LaTeX结缘，2006年我需要写一篇图、文、式（公式）并茂的英文论文。想起用Word时抓狂的样子，终于下决心这回用TeX/LaTeX来写！于是找来CTeX（一个中文TeX<del>宏包</del>系统，初学者的上选，可以到<a href="http://www.ctex.org">这里</a>下载）安装包，借来参考书，似模似样的写起来。一个月下来，竟然不知不觉“轻舟已过万重山”，一份70来页的文档跃然纸上。麻雀虽小，却也包含了Graph, Table, Equation, Algorithm, Theorem，以及Content, Reference, Cross-reference和Bookmark，等等。至此，不仅于LaTeX相见恨晚，似乎并没有想象中的那么难学。于是两年来，PC上再也没有出现过超过10页的Word文档。几篇文档写下来，手法日臻纯熟，于TeX确越发敬畏起来，实感其之博大精深，回想Word，现在只能称之为“字处理软件”，而非“排版软件”，在TeX面前，似乎有些小巫见大巫。慢慢的，迷恋于TeX不能自拔，用它写Report，写Memorandum，写Presentation，甚至在LaTeX中做pdf动画。  </p><p>（未完&#8230;）</p></div></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Dazhi Jiang</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-06-18T00:00:00+08:00" pubdate data-updated="true">Jun 18<span>th</span>, 2008</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/tex-latex/'>TeX/LaTeX</a>, <a class='category' href='/blog/categories/zhong-wen/'>中文</a>, <a class='category' href='/blog/categories/yi-jin-jing/'>易筋经</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left articlenav" href="/blog/2007/11/30/xiang-long-shi-ba-zhang/" title="Previous Post: 降龙十八掌"><i class="icon-left-bold"></i>  降龙十八掌</a>
+      
+      
+        <a class="basic-alignment right articlenav" href="/blog/2012/02/26/starting/" title="Next Post: 乱弹，学步">乱弹，学步  <i class="icon-right-bold"></i></a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <!-- <h2>Comments</h2> -->
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h3>Recent Posts</h3>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/12/06/using-chinese-category-tags-in-octopress/">Octopress易筋经，中文分类标签</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/05/generating-toc-in-octopress/">Octopress易筋经，目录表ToC</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/05/moving/">搬家</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/02/26/install-ruby-with-rvm/">Install Ruby with RVM</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/02/26/starting/">乱弹，学步</a>
+      </li>
+    
+  </ul>
+</section>
+
+  
+</aside>
+
+
+	
+	<footer role="contentinfo" class="inner"><p>
+  Copyright &copy; 2012 - Dazhi Jiang |
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span> |
+  <span class="credit">Inspired by <a href="http://www.pizn.net">iLotus</a></span> |
+  <span class="credit">版权声明：<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/">CC BY-NC-SA 3.0</a></span>
+</p>
+
+</footer>
+	
+	
+
+<script type="text/javascript">
+      var disqus_shortname = 'Dazhi';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://Khaos.github.com/blog/2008/06/18/trying-lyx/';
+        var disqus_url = 'http://Khaos.github.com/blog/2008/06/18/trying-lyx/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+
+
+<script src="/javascripts/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+  jQuery.noConflict();
+  // Code that uses other library's $ can follow here.
+</script>
+<script src="/javascripts/jquery.scrollTo.min.js" type="text/javascript"></script>
+<script src="/javascripts/jquery.tableofcontents.min.js" type="text/javascript"></script>
+<script src="/javascripts/iFira.js" type="text/javascript"></script>
+
+
+  
+
+
+
+</body>
+</html>
