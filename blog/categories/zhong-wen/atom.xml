@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 中文 | Khaos]]></title>
   <link href="http://Khaos.github.com/blog/categories/zhong-wen/atom.xml" rel="self"/>
   <link href="http://Khaos.github.com/"/>
-  <updated>2012-12-06T16:46:35+08:00</updated>
+  <updated>2012-12-06T20:33:57+08:00</updated>
   <id>http://Khaos.github.com/</id>
   <author>
     <name><![CDATA[Dazhi Jiang]]></name>
@@ -500,7 +500,13 @@ $ sudo rm -rf /opt/local/bin/jekyll
   
     <li><span>26 Feb 2012</span> &raquo; <a href="/blog/2012/02/26/starting/">乱弹，学步</a></li>
   
-    <li><span>24 Mar 2010</span> &raquo; <a href="/blog/2010/03/24/create-a-bode-plot-using-pgftikz/">Create a Bode plot using PGF/TikZ</a></li>
+    <li><span>24 Mar 2010</span> &raquo; <a href="/blog/2010/03/24/create-a-bode-plot-using-pgftikz/">Create a Bode plot using PGF/TikZ, TikZ Tao</a></li>
+  
+    <li><span>12 Feb 2010</span> &raquo; <a href="/blog/2010/02/12/spirit/">Spirit, a Sad Story</a></li>
+  
+    <li><span>07 Dec 2009</span> &raquo; <a href="/blog/2009/12/07/matlab-toolbox-gui-first-release/">The Final GUI, Matlab Tao (2)</a></li>
+  
+    <li><span>30 Nov 2009</span> &raquo; <a href="/blog/2009/11/30/matlab-toolbox-gui-prototype/">A GUI Prototype for ACSE Course Testing System, Matlab Tao (1)</a></li>
   
     <li><span>18 Jun 2008</span> &raquo; <a href="/blog/2008/06/18/trying-lyx/">形而上者谓之道，形而下者谓之器 —— LyX学习小记</a></li>
   

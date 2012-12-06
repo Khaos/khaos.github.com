@@ -4,7 +4,7 @@
   <title><![CDATA[Category: English | Khaos]]></title>
   <link href="http://Khaos.github.com/blog/categories/english/atom.xml" rel="self"/>
   <link href="http://Khaos.github.com/"/>
-  <updated>2012-12-06T16:46:35+08:00</updated>
+  <updated>2012-12-06T20:33:57+08:00</updated>
   <id>http://Khaos.github.com/</id>
   <author>
     <name><![CDATA[Dazhi Jiang]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Create a Bode plot using PGF/TikZ]]></title>
+    <title type="html"><![CDATA[Create a Bode plot using PGF/TikZ, TikZ Tao]]></title>
     <link href="http://Khaos.github.com/blog/2010/03/24/create-a-bode-plot-using-pgftikz/"/>
     <updated>2010-03-24T00:00:00+08:00</updated>
     <id>http://Khaos.github.com/blog/2010/03/24/create-a-bode-plot-using-pgftikz</id>
@@ -350,6 +350,89 @@
 
 <p class="info">Update: <br />
     The code has been included in the PGF/Ti<em>k</em>Z gallery, <a href="http://www.texample.net/">TeXample.net</a>, see <a href="http://www.texample.net/tikz/examples/bode-plot/">here</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Spirit, a Sad Story]]></title>
+    <link href="http://Khaos.github.com/blog/2010/02/12/spirit/"/>
+    <updated>2010-02-12T00:00:00+08:00</updated>
+    <id>http://Khaos.github.com/blog/2010/02/12/spirit</id>
+    <content type="html"><![CDATA[<p>WHAT MAKES US HUMAN?</p>
+
+<!-- more -->
+
+<p>The original story is posted at <a href="http://xkcd.com/695/">xkcd</a>.</p>
+
+<p class="fn-img"><img src="../../../../../images/blog/2010/spirit.png" alt="GUI prototype" /></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The Final GUI, Matlab Tao (2)]]></title>
+    <link href="http://Khaos.github.com/blog/2009/12/07/matlab-toolbox-gui-first-release/"/>
+    <updated>2009-12-07T00:00:00+08:00</updated>
+    <id>http://Khaos.github.com/blog/2009/12/07/matlab-toolbox-gui-first-release</id>
+    <content type="html"><![CDATA[<p>Some screenshots of the ACSE Teaching &amp; Testing system.</p>
+
+<!-- more -->
+
+<table>
+  <tbody>
+    <tr>
+      <td>Welcome Page</td>
+      <td>Finish Page</td>
+    </tr>
+    <tr>
+      <td><img src="../../../../../images/blog/2009/acs114prototype025b85d.png" alt="GUI prototype" /></td>
+      <td><img src="../../../../../images/blog/2009/page-last015b55d.png" alt="GUI prototype" /></td>
+    </tr>
+    <tr>
+      <td>Demo Page</td>
+      <td>Question 1</td>
+    </tr>
+    <tr>
+      <td><img src="../../../../../images/blog/2009/page015b105d.png" alt="GUI prototype" /></td>
+      <td><img src="../../../../../images/blog/2009/page025b45d.png" alt="GUI prototype" /></td>
+    </tr>
+    <tr>
+      <td>Question 3a</td>
+      <td>Question 3b</td>
+    </tr>
+    <tr>
+      <td><img src="../../../../../images/blog/2009/page04a5b45d.png" alt="GUI prototype" /></td>
+      <td><img src="../../../../../images/blog/2009/page04b5b45d.png" alt="GUI prototype" /></td>
+    </tr>
+    <tr>
+      <td>Question 2</td>
+      <td>Question 5</td>
+    </tr>
+    <tr>
+      <td><img src="../../../../../images/blog/2009/page035b45d.png" alt="GUI prototype" /></td>
+      <td><img src="../../../../../images/blog/2009/page055b45d.png" alt="GUI prototype" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="infoup">The GUI has been upgraded since the first release. Many improvements and bug fixes have been done. I will release a demo GUI on GitHub later.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[A GUI Prototype for ACSE Course Testing System, Matlab Tao (1)]]></title>
+    <link href="http://Khaos.github.com/blog/2009/11/30/matlab-toolbox-gui-prototype/"/>
+    <updated>2009-11-30T00:00:00+08:00</updated>
+    <id>http://Khaos.github.com/blog/2009/11/30/matlab-toolbox-gui-prototype</id>
+    <content type="html"><![CDATA[<p>I’ve recently been asked to design a new testing system (toolbox) for the first year students of ACSE. The purpose is to create a easy-to-use Matlab GUI to help the student to fulfil a self-testing task.</p>
+
+<p>After a few days work, I got my first GUI prototype (see below) which has dark background and light foreground.</p>
+
+<!-- more -->
+
+<p class="fn-img" style="max-width: 450px;"><img src="../../../../../images/blog/2009/acs114prototype025b85d.png" alt="GUI prototype" /></p>
+
+<p>I’m planning to improve this GUI by embedding a tab panel in the question zone. However, there is no standard tab panel GUI component in Matlab. So it has to be built either using the undocumented Java classes (need more Java *_* ) or using a group of the basic Matlab GUI components (more codes -_-<font size="1">P</font> ). I’m going to show the final design when I finish this project.</p>
+
 ]]></content>
   </entry>
   
