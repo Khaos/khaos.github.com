@@ -1,0 +1,386 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Linux易筋经，英文Ubuntu下配置中文字体及安装中文输入法 - Khaos</title>
+  <meta name="author" content="Dazhi Jiang">
+
+  
+  <meta name="description" content="现在用Mac，离Linux渐远，但09年用Linux的时的记忆，犹新。 　　Ubuntu版本时至9.04，对中文的支持已经很不错，只不过由于版权的因素，所以其下只能用一些自由授权的字体，这就使得系统默认不那么美观，于是很多人就把Windows或者Mac OS下的字体拿来使用。 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://Khaos.github.com/blog/2009/08/04/how-to-install-chinese-font-on-ubuntu/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Khaos" type="application/atom+xml">
+  <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+<!-- mathjax config similar to math.stackexchange -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    messageStyle: "none",
+    "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+  });
+  MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<!-- DISQUS JavaScript configuration variables -->
+<script type="text/javascript">
+    var disqus_developer = 1; // developer mode is on
+</script>
+  
+
+</head>
+
+
+<body itemscope itemtype="http://schema.org/WebPage"    class="collapse-sidebar sidebar-footer fira" >
+	<div class="fira-nav">
+	  <nav role="navigation"><ul class="main-navigation">
+	
+	<li class="home">
+		<a href="/" rel="nofollow" title="Home">
+			<i class="icon-home"></i>
+		</a>
+	</li>
+	
+	
+	<li>
+		<a href="/blog/archives" rel="bookmark" title="Archives">
+			<i class="icon-archive"></i>
+		</a>
+	</li>
+	
+	
+	<li>
+		<a href="/blog/contact" rel="bookmark" title="About me">
+			<i class="icon-mail"></i>
+		</a>
+	</li>
+	
+	
+	<li>
+		<a href="http://weibo.com/djkhaos" target="_blank" rel="nofollow" title="我的微博">
+			<i class="icon-sina-weibo"></i>
+		</a>
+	</li>
+	
+	
+	<li>
+		<a href="https://github.com/Khaos" target="_blank" rel="nofollow" title="My GitHub">
+			<i class="icon-github"></i>
+		</a>
+	</li>
+	
+	<li>
+		<a href="/atom.xml" rel="nofollow" target="_blank" title="Click to subscribe">
+			<i class="icon-rss"></i>
+		</a>
+	</li>
+</ul>
+</nav>
+	</div>
+	
+	<section class="fira-header-bar">
+		
+	</section>
+	
+	
+	<div>
+<article class="fira-article" role="article">
+  
+  <header>
+    
+      <h1 class="fira-pagetit">Linux易筋经，英文Ubuntu下配置中文字体及安装中文输入法</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-08-04T01:00:00+08:00" pubdate data-updated="true">Aug 4<span>th</span>, 2009</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p class="info">现在用Mac，离Linux渐远，但09年用Linux的时的记忆，犹新。</p>
+
+<!-- more -->
+
+<div id="msgcns!E5B806D2C8679F5D!411" class="bvMsg"><table style="width:100%;height:650px;" border="0"><tbody><tr><td> <div style="width:100%;height:650px;overflow:auto;"> 　　Ubuntu版本时至9.04，对中文的支持已经很不错，只不过由于版权的因素，所以其下只能用一些自由授权的字体，这就使得系统默认不那么美观，于是很多人就把Windows或者Mac OS下的字体拿来使用。本文是介绍如何安装英文Ubuntu下的中文支持，安装与配置额外字体，以及中文输入法iBus。由于版权因素，所有字体名都以匿名形式出现。 　　首先，安装中文支持，这其实很简单，只要通过系统菜单 [System]-&gt;[Administration]-&gt;[Language Support] ，把Chinese选中就可以了。注意由于下面安装iBus输入法，所以这里就不要选择安装输入法选项了，否则就会默认安装scim。 　　接着就可以安装你喜欢的中文字体了（其实，英文字体也可以以参考安装）。具体步骤如下： <ol><ol>
+<li>建立字体存放目录，例如： /home/username/myfonts/  </li>
+<li>将字体文件copy至该目录下；  </li>
+<li>在 /usr/share/fonts/ 下，创建目录：  <div style="border-bottom:gray 1px solid;border-left:gray 1px solid;line-height:12pt;background-color:#f4f4f4;width:97.5%;font-family:consolas, 'Courier New', courier, monospace;font-size:8pt;overflow:auto;border-top:gray 1px solid;cursor:text;border-right:gray 1px solid;margin:20px 0 10px;padding:4px;"> <div style="line-height:12pt;background-color:#f4f4f4;width:100%;font-family:consolas, 'Courier New', courier, monospace;color:black;font-size:8pt;overflow:visible;border-style:none;padding:0;"><pre style="line-height:12pt;background-color:white;width:100%;font-family:consolas, 'Courier New', courier, monospace;color:black;font-size:8pt;overflow:visible;border-style:none;margin:0;padding:0;">sudo mkdir -p /usr/share/fonts/zh_CN/</pre></div>
+</div>
+</li>
+<li>建立字体目录衔接： 
+<div style="border-bottom:gray 1px solid;border-left:gray 1px solid;line-height:12pt;background-color:#f4f4f4;width:97.5%;font-family:consolas, 'Courier New', courier, monospace;font-size:8pt;overflow:auto;border-top:gray 1px solid;cursor:text;border-right:gray 1px solid;margin:20px 0 10px;padding:4px;">
+<div style="line-height:12pt;background-color:#f4f4f4;width:100%;font-family:consolas, 'Courier New', courier, monospace;color:black;font-size:8pt;overflow:visible;border-style:none;padding:0;">
+<pre style="line-height:12pt;background-color:white;width:100%;font-family:consolas, 'Courier New', courier, monospace;color:black;font-size:8pt;overflow:visible;border-style:none;margin:0;padding:0;">$ cd /usr/share/fonts/zh_CN/</pre>
+<pre style="line-height:12pt;background-color:#f4f4f4;width:100%;font-family:consolas, 'Courier New', courier, monospace;color:black;font-size:8pt;overflow:visible;border-style:none;margin:0;padding:0;">$ sudo ln -s /home/username/myfonts/ myfonts</pre>
+</div>
+</div>
+</li>
+<li>在新目录下生成字体目录列表： 
+<div style="border-bottom:gray 1px solid;border-left:gray 1px solid;line-height:12pt;background-color:#f4f4f4;width:97.5%;font-family:consolas, 'Courier New', courier, monospace;font-size:8pt;overflow:auto;border-top:gray 1px solid;cursor:text;border-right:gray 1px solid;margin:20px 0 10px;padding:4px;">
+<div style="line-height:12pt;background-color:#f4f4f4;width:100%;font-family:consolas, 'Courier New', courier, monospace;color:black;font-size:8pt;overflow:visible;border-style:none;padding:0;">
+<pre style="line-height:12pt;background-color:white;width:100%;font-family:consolas, 'Courier New', courier, monospace;color:black;font-size:8pt;overflow:visible;border-style:none;margin:0;padding:0;">$ cd /usr/share/fonts/zh_CN/myfonts/</pre>
+<pre style="line-height:12pt;background-color:#f4f4f4;width:100%;font-family:consolas, 'Courier New', courier, monospace;color:black;font-size:8pt;overflow:visible;border-style:none;margin:0;padding:0;">$ sudo mkfontscale</pre>
+<pre style="line-height:12pt;background-color:white;width:100%;font-family:consolas, 'Courier New', courier, monospace;color:black;font-size:8pt;overflow:visible;border-style:none;margin:0;padding:0;">$ sudo mkfontdir</pre>
+<pre style="line-height:12pt;background-color:#f4f4f4;width:100%;font-family:consolas, 'Courier New', courier, monospace;color:black;font-size:8pt;overflow:visible;border-style:none;margin:0;padding:0;">$ sudo fc-cache</pre>
+</div>
+</div>至此，字体安装过程完成，下面进行配置。 
+</li>
+<li>修改配置文件 /etc/fonts/conf.d/69-language-selector-zh-cn.conf ， 
+<div style="border-bottom:gray 1px solid;border-left:gray 1px solid;line-height:12pt;background-color:#f4f4f4;width:97.5%;font-family:consolas, 'Courier New', courier, monospace;font-size:8pt;overflow:auto;border-top:gray 1px solid;cursor:text;border-right:gray 1px solid;margin:20px 0 10px;padding:4px;">
+<div style="line-height:12pt;background-color:#f4f4f4;width:100%;font-family:consolas, 'Courier New', courier, monospace;color:black;font-size:8pt;overflow:visible;border-style:none;padding:0;"><pre style="line-height:12pt;background-color:white;width:100%;font-family:consolas, 'Courier New', courier, monospace;color:black;font-size:8pt;overflow:visible;border-style:none;margin:0;padding:0;">$ sudo gedit /etc/fonts/conf.d/69-language-selector-zh-cn.conf</pre></div>
+</div>注意，在英文Ubuntu下，这个文件可能不在 &#8230;/conf.d 目录下，而是在 &#8230;/conf.avail 中，这时候你可以copy一份副本出来，按下面方法编辑好，再copy至 &#8230;/conf.d 下。具体编辑方法是，在文件中找到类似于 
+<div style="border-bottom:gray 1px solid;border-left:gray 1px solid;line-height:12pt;background-color:#f4f4f4;width:97.5%;font-family:consolas, 'Courier New', courier, monospace;font-size:8pt;overflow:auto;border-top:gray 1px solid;cursor:text;border-right:gray 1px solid;margin:20px 0 10px;padding:4px;">
+<div style="line-height:12pt;background-color:#f4f4f4;width:100%;font-family:consolas, 'Courier New', courier, monospace;color:black;font-size:8pt;overflow:visible;border-style:none;padding:0;">
+<pre style="line-height:12pt;background-color:white;width:100%;font-family:consolas, 'Courier New', courier, monospace;color:black;font-size:8pt;overflow:visible;border-style:none;margin:0;padding:0;">... ...</pre>
+<pre style="line-height:12pt;background-color:#f4f4f4;width:100%;font-family:consolas, 'Courier New', courier, monospace;color:black;font-size:8pt;overflow:visible;border-style:none;margin:0;padding:0;">&lt;<span style="color:#0000ff;">string</span>&gt;Bitstream Vera Sans Mono&lt;/<span style="color:#0000ff;">string</span>&gt;</pre>
+<pre style="line-height:12pt;background-color:white;width:100%;font-family:consolas, 'Courier New', courier, monospace;color:black;font-size:8pt;overflow:visible;border-style:none;margin:0;padding:0;">&lt;<span style="color:#0000ff;">string</span>&gt;DejaVu Sans Mono&lt;/<span style="color:#0000ff;">string</span>&gt;</pre>
+<pre style="line-height:12pt;background-color:#f4f4f4;width:100%;font-family:consolas, 'Courier New', courier, monospace;color:black;font-size:8pt;overflow:visible;border-style:none;margin:0;padding:0;">&lt;<span style="color:#0000ff;">string</span>&gt;WenQuanYi Zen Hei&lt;/<span style="color:#0000ff;">string</span>&gt;</pre>
+<pre style="line-height:12pt;background-color:white;width:100%;font-family:consolas, 'Courier New', courier, monospace;color:black;font-size:8pt;overflow:visible;border-style:none;margin:0;padding:0;">&lt;<font color="#0000ff">string</font>&gt;AR PL UMing CN&lt;/<font color="#0000ff">string</font>&gt;</pre>
+<pre style="line-height:12pt;background-color:#f4f4f4;width:100%;font-family:consolas, 'Courier New', courier, monospace;color:black;font-size:8pt;overflow:visible;border-style:none;margin:0;padding:0;">... ...</pre>
+</div>
+</div>的部分，在这之前添加 
+<div style="border-bottom:gray 1px solid;border-left:gray 1px solid;line-height:12pt;background-color:#f4f4f4;width:97.5%;font-family:consolas, 'Courier New', courier, monospace;font-size:8pt;overflow:auto;border-top:gray 1px solid;cursor:text;border-right:gray 1px solid;margin:20px 0 10px;padding:4px;">
+<div style="line-height:12pt;background-color:#f4f4f4;width:100%;font-family:consolas, 'Courier New', courier, monospace;color:black;font-size:8pt;overflow:visible;border-style:none;padding:0;"><pre style="line-height:12pt;background-color:white;width:100%;font-family:consolas, 'Courier New', courier, monospace;color:black;font-size:8pt;overflow:visible;border-style:none;margin:0;padding:0;">&lt;<span style="color:#0000ff;">string</span>&gt;XXX font&lt;/<span style="color:#0000ff;">string</span>&gt;</pre></div>
+</div>即可，其中XXX font就可以是你之前安装的字体。 
+</li>
+<li>重启X，这时就可以看到配置的字体其效果了。</li>
+</ol></ol>　　下面就是安装与配置一款比较好的中文输入法iBus，安装过程很简单，但是提供了一种在Ubuntu下利用新立得软件包管理器 (Synaptic Package Manager) 安装非官方维护的软件的方法，这样安装的软件都是较新的版本，通常都要比官方维护的新。首先找到iBus在LaunchPad上的源，<a href="https://launchpad.net/~ibus-dev/+archive/ppa">https://launchpad.net/~ibus-dev/+archive/ppa</a>。然后，进行如下安装配置步骤：
+<ol><ol>
+<li>添加软件维护源，打开一个终端，输入： 
+<div style="border-bottom:gray 1px solid;border-left:gray 1px solid;line-height:12pt;background-color:#f4f4f4;width:97.5%;font-family:consolas, 'Courier New', courier, monospace;font-size:8pt;overflow:auto;border-top:gray 1px solid;cursor:text;border-right:gray 1px solid;margin:20px 0 10px;padding:4px;">
+<div style="line-height:12pt;background-color:#f4f4f4;width:100%;font-family:consolas, 'Courier New', courier, monospace;color:black;font-size:8pt;overflow:visible;border-style:none;padding:0;"><pre style="line-height:12pt;background-color:white;width:100%;font-family:consolas, 'Courier New', courier, monospace;color:black;font-size:8pt;overflow:visible;border-style:none;margin:0;padding:0;">$ sudo gedit /etc/apt/sources.list</pre></div>
+</div>这个文件中存放着系统进行更新时需要查找的软件源。 
+</li>
+<li>在该文件底部添加： 
+<div style="border-bottom:gray 1px solid;border-left:gray 1px solid;line-height:12pt;background-color:#f4f4f4;width:97.5%;font-family:consolas, 'Courier New', courier, monospace;font-size:8pt;overflow:auto;border-top:gray 1px solid;cursor:text;border-right:gray 1px solid;margin:20px 0 10px;padding:4px;">
+<div style="line-height:12pt;background-color:#f4f4f4;width:100%;font-family:consolas, 'Courier New', courier, monospace;color:black;font-size:8pt;overflow:visible;border-style:none;padding:0;">
+<pre style="line-height:12pt;background-color:white;width:100%;font-family:consolas, 'Courier New', courier, monospace;color:black;font-size:8pt;overflow:visible;border-style:none;margin:0;padding:0;">deb http:<span style="color:#008000;">//ppa.launchpad.net/ibus-dev/ppa/ubuntu jaunty main</span></pre>
+<pre style="line-height:12pt;background-color:#f4f4f4;width:100%;font-family:consolas, 'Courier New', courier, monospace;color:black;font-size:8pt;overflow:visible;border-style:none;margin:0;padding:0;">deb-src http:<span style="color:#008000;">//ppa.launchpad.net/ibus-dev/ppa/ubuntu jaunty main</span></pre>
+</div>
+</div>注意代码中包含的 jaunty 字串其实是Ubuntu 9.04的发行代码。 
+</li>
+<li>在源网页上找到 <a href="http://keyserver.ubuntu.com:11371/pks/lookup?search=0x72DBF294B86C9BEB7170023321C022AA985E0E11&amp;op=index"><code>1024R/985E0E11</code></a> 这样的公钥，并运行如下语句 
+<div style="border-bottom:gray 1px solid;border-left:gray 1px solid;line-height:12pt;background-color:#f4f4f4;width:97.5%;font-family:consolas, 'Courier New', courier, monospace;font-size:8pt;overflow:auto;border-top:gray 1px solid;cursor:text;border-right:gray 1px solid;margin:20px 0 10px;padding:4px;">
+<div style="line-height:12pt;background-color:#f4f4f4;width:100%;font-family:consolas, 'Courier New', courier, monospace;color:black;font-size:8pt;overflow:visible;border-style:none;padding:0;">
+<pre style="line-height:12pt;background-color:white;width:100%;font-family:consolas, 'Courier New', courier, monospace;color:black;font-size:8pt;overflow:visible;border-style:none;margin:0;padding:0;">$ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 985E0E11</pre>
+<pre style="line-height:12pt;background-color:#f4f4f4;width:100%;font-family:consolas, 'Courier New', courier, monospace;color:black;font-size:8pt;overflow:visible;border-style:none;margin:0;padding:0;">$ sudo apt-get update</pre>
+</div>
+</div>前一句是将该公钥提交到系统公钥索引中，后一句更新软件包数据库。 
+</li>
+<li>安装iBus 
+<div style="border-bottom:gray 1px solid;border-left:gray 1px solid;line-height:12pt;background-color:#f4f4f4;width:97.5%;font-family:consolas, 'Courier New', courier, monospace;font-size:8pt;overflow:auto;border-top:gray 1px solid;cursor:text;border-right:gray 1px solid;margin:20px 0 10px;padding:4px;">
+<div style="line-height:12pt;background-color:#f4f4f4;width:100%;font-family:consolas, 'Courier New', courier, monospace;color:black;font-size:8pt;overflow:visible;border-style:none;padding:0;"><pre style="line-height:12pt;background-color:white;width:100%;font-family:consolas, 'Courier New', courier, monospace;color:black;font-size:8pt;overflow:visible;border-style:none;margin:0;padding:0;">$ sudo apt-get install ibus ibus-pinyin ibus-table</pre></div>
+</div>这里除了主程序，还安装了拼音和table两个输入法。 
+</li>
+<li>如果之前没安装iBus，还要设置系统的默认输入法，运行 
+<div style="border-bottom:gray 1px solid;border-left:gray 1px solid;line-height:12pt;background-color:#f4f4f4;width:97.5%;font-family:consolas, 'Courier New', courier, monospace;font-size:8pt;overflow:auto;border-top:gray 1px solid;cursor:text;border-right:gray 1px solid;margin:20px 0 10px;padding:4px;">
+<div style="line-height:12pt;background-color:#f4f4f4;width:100%;font-family:consolas, 'Courier New', courier, monospace;color:black;font-size:8pt;overflow:visible;border-style:none;padding:0;"><pre style="line-height:12pt;background-color:white;width:100%;font-family:consolas, 'Courier New', courier, monospace;color:black;font-size:8pt;overflow:visible;border-style:none;margin:0;padding:0;">$ sudo im-<span style="color:#0000ff;">switch</span> -c</pre></div>
+</div>进行设置即可。 
+</li>
+<li>重启X，打开一份文档，按Ctrl+Space看能否调出iBus，如果不能调出，可能有连个原因，首先可能你需要安装 ibus-gtk 这个iBus的GTK+ client，其次，你需要添加输入法，在 [System]-&gt;[Preferences]-&gt;[IBus Preferences] 中的 Input Methods 里添加你喜欢的输入法。这样应该就可以了。</li>
+</ol></ol>　　Linux下还有很多好用的输入法，例如小企鹅 (fcitx) 及 scim 等等，都不错，大家都可以试试。
+<ol>
+
+</ol>
+</div>
+</td></tr></tbody></table></div>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Dazhi Jiang</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-08-04T01:00:00+08:00" pubdate data-updated="true">Aug 4<span>th</span>, 2009</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/linux/'>Linux</a>, <a class='category' href='/blog/categories/zhong-wen/'>中文</a>, <a class='category' href='/blog/categories/yi-jin-jing/'>易筋经</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left articlenav" href="/blog/2009/08/03/Installation-of-ubuntu-904/" title="Previous Post: Linux易筋经，Ubuntu 9.04 的安装"><i class="icon-left-bold"></i>  Linux易筋经，Ubuntu 9.04 的安装</a>
+      
+      
+        <a class="basic-alignment right articlenav" href="/blog/2009/08/04/how-to-install-emacs-on-ubuntu/" title="Next Post: Linux易筋经，Emacs安装，以及颜色主题和中文配置初探">Linux易筋经，Emacs安装，以及颜色主题和中文配置初探  <i class="icon-right-bold"></i></a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <!-- <h2>Comments</h2> -->
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h3>Recent Posts</h3>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/12/06/using-chinese-category-tags-in-octopress/">Octopress易筋经，中文分类标签</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/05/generating-toc-in-octopress/">Octopress易筋经，目录表ToC</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/05/moving/">搬家</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/02/26/install-ruby-with-rvm/">Install Ruby with RVM</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/02/26/starting/">乱弹，学步</a>
+      </li>
+    
+  </ul>
+</section>
+
+  
+</aside>
+
+
+	
+	<footer role="contentinfo" class="inner"><p>
+  Copyright &copy; 2012 - Dazhi Jiang |
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span> |
+  <span class="credit">Inspired by <a href="http://www.pizn.net">iLotus</a></span> |
+  <span class="credit">版权声明：<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/">CC BY-NC-SA 3.0</a></span>
+</p>
+
+</footer>
+	
+	
+
+<script type="text/javascript">
+      var disqus_shortname = 'Dazhi';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://Khaos.github.com/blog/2009/08/04/how-to-install-chinese-font-on-ubuntu/';
+        var disqus_url = 'http://Khaos.github.com/blog/2009/08/04/how-to-install-chinese-font-on-ubuntu/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+
+
+<script src="/javascripts/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+  jQuery.noConflict();
+  // Code that uses other library's $ can follow here.
+</script>
+<script src="/javascripts/jquery.scrollTo.min.js" type="text/javascript"></script>
+<script src="/javascripts/jquery.tableofcontents.min.js" type="text/javascript"></script>
+<script src="/javascripts/iFira.js" type="text/javascript"></script>
+
+
+  
+
+
+
+</body>
+</html>

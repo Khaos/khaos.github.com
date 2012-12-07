@@ -1,0 +1,377 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Linux易筋经，Ubuntu 9.04 的安装 - Khaos</title>
+  <meta name="author" content="Dazhi Jiang">
+
+  
+  <meta name="description" content="安装前准备 安装过程 一些说明 后记： 相对于安装Windows XP，安装Ubuntu9.04是个颇为惬意的事情。本文将介绍如何从Live CD安装Windows XP (SP3) 及 Ubuntu 9.04 (Jaunty Jackalope) 双系统的过程。 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://Khaos.github.com/blog/2009/08/03/Installation-of-ubuntu-904/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Khaos" type="application/atom+xml">
+  <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+<!-- mathjax config similar to math.stackexchange -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    messageStyle: "none",
+    "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+  });
+  MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<!-- DISQUS JavaScript configuration variables -->
+<script type="text/javascript">
+    var disqus_developer = 1; // developer mode is on
+</script>
+  
+
+</head>
+
+
+<body itemscope itemtype="http://schema.org/WebPage"    class="collapse-sidebar sidebar-footer fira" >
+	<div class="fira-nav">
+	  <nav role="navigation"><ul class="main-navigation">
+	
+	<li class="home">
+		<a href="/" rel="nofollow" title="Home">
+			<i class="icon-home"></i>
+		</a>
+	</li>
+	
+	
+	<li>
+		<a href="/blog/archives" rel="bookmark" title="Archives">
+			<i class="icon-archive"></i>
+		</a>
+	</li>
+	
+	
+	<li>
+		<a href="/blog/contact" rel="bookmark" title="About me">
+			<i class="icon-mail"></i>
+		</a>
+	</li>
+	
+	
+	<li>
+		<a href="http://weibo.com/djkhaos" target="_blank" rel="nofollow" title="我的微博">
+			<i class="icon-sina-weibo"></i>
+		</a>
+	</li>
+	
+	
+	<li>
+		<a href="https://github.com/Khaos" target="_blank" rel="nofollow" title="My GitHub">
+			<i class="icon-github"></i>
+		</a>
+	</li>
+	
+	<li>
+		<a href="/atom.xml" rel="nofollow" target="_blank" title="Click to subscribe">
+			<i class="icon-rss"></i>
+		</a>
+	</li>
+</ul>
+</nav>
+	</div>
+	
+	<section class="fira-header-bar">
+		
+	</section>
+	
+	
+	<div>
+<article class="fira-article" role="article">
+  
+  <header>
+    
+      <h1 class="fira-pagetit">Linux易筋经，Ubuntu 9.04 的安装</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-08-03T01:54:00+08:00" pubdate data-updated="true">Aug 3<span>rd</span>, 2009</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><ul id="markdown-toc">
+  <li><a href="#section">安装前准备</a></li>
+  <li><a href="#section-1">安装过程</a></li>
+  <li><a href="#section-2">一些说明</a></li>
+  <li><a href="#section-3">后记：</a></li>
+</ul>
+
+<p>相对于安装Windows XP，安装Ubuntu9.04是个颇为惬意的事情。本文将介绍如何从Live CD安装Windows XP (SP3) 及 <a href="http://www.ubuntu.com/">Ubuntu 9.04 (Jaunty Jackalope)</a> 双系统的过程。文中假定你的电脑上已经安装了Windows XP，并且安装至硬盘的第一个主分区 (hda1/sda1, 分别对应与IDE/SCSI硬盘) 上，在Windows下，这个盘符一般为<code>C:</code>。</p>
+
+<!-- more -->
+
+<h2 id="section">安装前准备</h2>
+
+<p>首先你需要下载Ubuntu，最新版9.04可以到<a href="http://www.ubuntu.com/getubuntu/download">这里</a>下载。由于Ubuntu是Linux一个free的发行版本，所以不用担心版权问题，你甚至可以在那里申请免费的Live CD。在下载页面中，你可以根据所需选择需要的版本，例如如果你的机器配置比较好，64位的CPU，那么你可以选择64位Desktop版本，这样你就可以安装64位的Matlab，而远离 OUT OF MEMORY error 了。</p>
+
+<p>Ubuntu的安装模式相对较多样化且贴心，例如你可以申请Live CD，而光盘安装；你也可以下载安装镜像文件，而在Windows下挂载镜像安装；你还可以只下载最小安装文件，在线飞行安装。</p>
+
+<p>另一个准备工作就是给你的硬盘分好区，其实这一步在安装Ubuntu的时候也可以做，不过这里建议你先把Linux所用的分区划分出来，下面安装的时候就方便多了。我的分区方案是先划分成两个主引导分区 (sda1, sda2) 和一个扩展分区，然后再从扩展分区起始部分分出2个逻辑分区 (sda5, sda6，注意逻辑分区的分区号是从5开始），这些分区都是给Windows用的，这样在扩展分区的最后部分就余下大概50G的空间供Ubuntu使用。</p>
+
+<h2 id="section-1">安装过程</h2>
+
+<p>上面提到了分区，其实这种方式安装Ubuntu是“纯净”安装，也就是Windows和Ubuntu都在各自的分区上，互不干扰。从Ubuntu 8.10 （也可能是 8.04 alpha） 版本，它就自带一种在Windows下“嵌入式”的安装模式，<a href="http://wiki.ubuntu.hk/w/Install_Ubuntu_with_Wubi">Wubi</a>。这种模式的优点是你可以像安装一个Windows标准软件一样安装与卸载Ubuntu，当然这种安装产生的也是原汁原味的Ubuntu系统，而非虚拟机式的；缺点就是在磁盘存取速度上会有所损失。所以如果你只是想尝鲜，而离不开Windows的怀抱，可以选择这种方式，详细介绍可参见上面给出的Wubi链接。由于我要把Ubuntu作为主力系统，所以采用建立独立分区的方式。</p>
+
+<p>准备工作完成后，就可以安装Ubuntu鸟～～～</p>
+
+<ul>
+  <li>把Live CD放入光驱，然后开机，从光盘启动。在启动界面上，会看到安装选项，其中一项是从CD运行Ubuntu，若想先过把瘾，可以选择它，试用一下。现在回到安装上来，选择安装Ubuntu，进入安装界面。
+    <ol>
+      <li>择安装语言，就是安装时，显示提示的语言，选 [English]。</li>
+      <li>择你的所在地，这个选项类似于Windows里的区域选项，可能会决定系统以何种默认编码读取你文档，以及设定相应的一些本地设置，例如货币单位的表示，选 [London] </li>
+      <li>择键盘类型，如果你是UK的键盘，就要选 [U. K. English]。</li>
+      <li>
+        <p>第四步，硬盘分区，这也是最关键的一步。一般来说，安装一个Ubuntu系统，至少需要两个分区，分别为 / 分区和 SWAP 分区，前者用于存放所有文件，而后者类似于Windows下的虚拟内存，一般建议大小为内存的 1.5~2 倍。如果想将用户文件单独存放，这就需要从 / 中分出一个 /home 分区；如果想把应用软件安装于独立的分区上，就需要分出一个 /usr 分区，以便于管理；另外，还可以分出一个 /var/log 分区，也就是系统日志记录分区，一个 /tmp 分区，用来存放临时文件，一个 /bin 分区，用来存放标准系统实用程序，等等。对于新手来说，一般分三个区就可以了，依次为 / ，/home，及SWAP。其中前两个分区的文件格式选择ext3（下一个版本的Ubuntu，ext4将成为默认文件格式），SWAP就是swap格式。下面是我的分区情况：</p>
+
+        <table>
+          <tbody>
+            <tr>
+              <td>/</td>
+              <td>ext3</td>
+              <td>27G</td>
+              <td> </td>
+            </tr>
+            <tr>
+              <td>/home</td>
+              <td>ext3</td>
+              <td>20G</td>
+              <td> </td>
+            </tr>
+            <tr>
+              <td>SWAP</td>
+              <td>swap</td>
+              <td>3G</td>
+              <td>一个较大的swap，是因为一些数值运算软件，如Matlab，在处理大型数据时所需</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>Migrate Documents and Settings，就是把你之前的一些用户信息（可以是Windwos上的）同步过来。</li>
+      <li>填写用户个人信息。</li>
+      <li>检查设定。</li>
+      <li>开始安装。</li>
+    </ol>
+  </li>
+  <li>最后，重启，完成。</li>
+</ul>
+
+<h2 id="section-2">一些说明</h2>
+
+<p>虽然Ubuntu安装光盘上包含了大多数硬件的驱动，但是还是强烈建议在有条件的情况下，连上有线网安装，这样在安装过程中，会自动下载最新的驱动程序进行安装。不仅如此，对于一些受限的硬件来说，例如无线网卡和Modem，必须手动激活并且在线下载驱动安装，所以在不接驳网络的情况下，很有可能找不到这两个硬件，而那个激活界面也不会自动出现。</p>
+
+<p>总而言之，Ubuntu的安装还是相当轻快的，基本上不需要手动安装硬件驱动，有了GTK+，界面也是相当的人性化。</p>
+
+<h2 id="section-3">后记：</h2>
+
+<p>本文是<a href="../../../../categories/linux">Linux 易筋经</a>的第一篇，却单单只讲了如何安装Ubuntu，众多Linux发行版中被无数高手鄙视最多的一个。这是因为Ubuntu是最容易上手的一个发行版，其用户也可能是所有Linux用户中最多的，之前在Google搜索中，关键词Ubuntu的出勤率竟然超过了Linux，所以，对于新手来说，从它开始是比较恰当的，遇到问题，很容易寻找到答案和帮助。</p>
+
+<p>对于我来说，下一个安装的发行版可能是Gentoo，也可能是Fedora ……</p>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Dazhi Jiang</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-08-03T01:54:00+08:00" pubdate data-updated="true">Aug 3<span>rd</span>, 2009</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/linux/'>Linux</a>, <a class='category' href='/blog/categories/zhong-wen/'>中文</a>, <a class='category' href='/blog/categories/yi-jin-jing/'>易筋经</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left articlenav" href="/blog/2008/06/18/trying-lyx/" title="Previous Post: 形而上者谓之道，形而下者谓之器 —— LyX学习小记"><i class="icon-left-bold"></i>  形而上者谓之道，形而下者谓之器 —— LyX学习小记</a>
+      
+      
+        <a class="basic-alignment right articlenav" href="/blog/2009/08/04/how-to-install-chinese-font-on-ubuntu/" title="Next Post: Linux易筋经，英文Ubuntu下配置中文字体及安装中文输入法">Linux易筋经，英文Ubuntu下配置中文字体及安装中文输入法  <i class="icon-right-bold"></i></a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <!-- <h2>Comments</h2> -->
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h3>Recent Posts</h3>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/12/06/using-chinese-category-tags-in-octopress/">Octopress易筋经，中文分类标签</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/05/generating-toc-in-octopress/">Octopress易筋经，目录表ToC</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/05/moving/">搬家</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/02/26/install-ruby-with-rvm/">Install Ruby with RVM</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/02/26/starting/">乱弹，学步</a>
+      </li>
+    
+  </ul>
+</section>
+
+  
+</aside>
+
+
+	
+	<footer role="contentinfo" class="inner"><p>
+  Copyright &copy; 2012 - Dazhi Jiang |
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span> |
+  <span class="credit">Inspired by <a href="http://www.pizn.net">iLotus</a></span> |
+  <span class="credit">版权声明：<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/">CC BY-NC-SA 3.0</a></span>
+</p>
+
+</footer>
+	
+	
+
+<script type="text/javascript">
+      var disqus_shortname = 'Dazhi';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://Khaos.github.com/blog/2009/08/03/Installation-of-ubuntu-904/';
+        var disqus_url = 'http://Khaos.github.com/blog/2009/08/03/Installation-of-ubuntu-904/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+
+
+<script src="/javascripts/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+  jQuery.noConflict();
+  // Code that uses other library's $ can follow here.
+</script>
+<script src="/javascripts/jquery.scrollTo.min.js" type="text/javascript"></script>
+<script src="/javascripts/jquery.tableofcontents.min.js" type="text/javascript"></script>
+<script src="/javascripts/iFira.js" type="text/javascript"></script>
+
+
+  
+
+
+
+</body>
+</html>
